@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SFriends</string>
+    <string name="txt_SinIn">Đăng nhập</string>
+    <string name="txt_hello">Xin Chào</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_password">Mật khẩu</string>
+    <string name="txt_OK">ĐĂNG NHẬP</string>
+    <string name="txt_signinwith">Đăng nhập với tài khoản khác</string>
+    <string name="txt_setting">Cài đặt</string>
+    <string name="txt_logout">Đăng xuất</string>
+    <string name="txt_homepage">Trang chủ</string>
+    <string name="txt_Notifications">Thông báo</string>
+    <string name="txt_Cuisine">Ẩm thực</string>
+    <string name="txt_entertainment">Giải trí</string>
+    <string name="txt_Shopping">Mua sắm</string>
+    <string name="txt_Travel">Du lịch</string>
+    <string name="txt_Education">Giáo dục</string>
+    <string name="txt_Other">Khác</string>
+</resources>

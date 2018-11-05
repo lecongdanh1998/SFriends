@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">SFriends</string>
+    <string name="app_name">Project One</string>
+    <string name="txt_SinIn">Login</string>
+    <string name="txt_hello">Hello</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_OK">OK</string>
+    <string name="txt_signinwith">Sign in with another account</string>
+    <string name="txt_setting">Setting</string>
+    <string name="txt_logout">Logout</string>
+    <string name="txt_homepage">Home Page</string>
+    <string name="txt_Notifications">Notifications</string>
+    <string name="txt_Cuisine">Cuisine</string>
+    <string name="txt_entertainment">Entertainment</string>
+    <string name="txt_Shopping">Shopping</string>
+    <string name="txt_Travel">Travel</string>
+    <string name="txt_Education">Education</string>
+    <string name="txt_Other">Other</string>
+
 </resources>

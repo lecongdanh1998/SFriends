@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimens_heigth_toobar"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/img_back_Toobar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dimens_margin"
+        />
+
+    <TextView
+        android:id="@+id/txt_name_Toobar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@id/img_notification_Toobar"
+        android:layout_toRightOf="@id/img_back_Toobar"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:textColor="@color/color_WhiteTextView"
+        android:textSize="@dimen/textMedium"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_toLeftOf="@id/img_QR_Toobar"
+        android:src="@drawable/hotline"
+        android:id="@+id/img_phone_Toobar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dimens_margin"
+        />
+    <ImageView
+        android:layout_toLeftOf="@id/img_notification_Toobar"
+        android:src="@drawable/qr"
+        android:id="@+id/img_QR_Toobar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dimens_margin"
+        />
+    <ImageView
+        android:src="@drawable/bell"
+        android:id="@+id/img_notification_Toobar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dimens_margin"
+         />
+</RelativeLayout>

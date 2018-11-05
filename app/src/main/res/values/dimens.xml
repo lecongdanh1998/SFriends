@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimens_padding10dp">5dp</dimen>
+    <dimen name="dimens_padding20dp">10dp</dimen>
+    <dimen name="dimens_testSize25sp">25sp</dimen>
+    <dimen name="padding_edt_form_signIn">10dp</dimen>
+    <dimen name="textMedium">15sp</dimen>
+    <dimen name="dimens_margin">16dp</dimen>
+    <dimen name="dimens_heigth_toobar">56dp</dimen>
+    <dimen name="avatar_size">120dp</dimen>
+    <dimen name="margin_header_navigation_main">5dp</dimen>
+    <dimen name="textLager">20sp</dimen>
+    <dimen name="padding_item_menu">15dp</dimen>
+    <dimen name="textSmall">10sp</dimen>
+
+    <dimen name="imagesSize">100dp</dimen>
+</resources>
