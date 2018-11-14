@@ -14,11 +14,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity android:name=".View.MainActivity" />
         <activity
             android:name=".View.SignIn.SignIn"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".View.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +27,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.HomePage.WebViewMain"></activity>
+        <activity android:name=".View.HomePage.WebViewMain" />
+        <activity android:name=".View.Intro.Intro" />
+        <activity android:name=".View.SignUp.SignUp" />
+        <activity android:name=".View.HomePage.Sarena.Sarena" />
+        <activity android:name=".View.HomePage.Senate.Senate" />
+        <activity android:name=".View.HomePage.Sagora.Sagora"></activity>
     </application>
 
 </manifest>

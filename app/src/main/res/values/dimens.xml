@@ -6,12 +6,30 @@
     <dimen name="padding_edt_form_signIn">10dp</dimen>
     <dimen name="textMedium">15sp</dimen>
     <dimen name="dimens_margin">16dp</dimen>
+    <dimen name="dimens_padding">16dp</dimen>
+    <dimen name="dimens_padding10">10dp</dimen>
     <dimen name="dimens_heigth_toobar">56dp</dimen>
     <dimen name="avatar_size">120dp</dimen>
     <dimen name="margin_header_navigation_main">5dp</dimen>
     <dimen name="textLager">20sp</dimen>
     <dimen name="padding_item_menu">15dp</dimen>
+    <dimen name="margin_FloatingActionButton">16dp</dimen>
     <dimen name="textSmall">10sp</dimen>
-
+    <dimen name="textbatdongsan">14sp</dimen>
+    <dimen name="texthomepage">16sp</dimen>
+    <dimen name="textTitToobar">16sp</dimen>
+    <dimen name="card_padding">1dp</dimen>
+    <dimen name="dimes_margin5Dp">5dp</dimen>
+    <dimen name="dimes_radiusDp">5dp</dimen>
+    <dimen name="dimes_margin10Dp">10dp</dimen>
     <dimen name="imagesSize">100dp</dimen>
+    <dimen name="dimens_sizecardview">230dp</dimen>
+    <dimen name="dimens_sizeimages">250dp</dimen>
+    <dimen name="dimens_sizeimagesHe">150dp</dimen>
+    <dimen name="dimens_khoangcachComponent">16dp</dimen>
+    <dimen name="image_small_width">20dp</dimen>
+    <dimen name="activity_horizontal_margin">40dp</dimen>
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+
 </resources>

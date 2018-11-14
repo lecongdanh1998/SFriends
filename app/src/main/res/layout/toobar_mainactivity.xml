@@ -1,55 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dimens_heigth_toobar"
-    android:background="@android:color/transparent">
+    android:layout_height="?attr/actionBarSize"
+    android:background="@android:color/transparent"
+    app:contentInsetEnd="0dp"
+    app:contentInsetStart="0dp"
+    android:contentInsetEnd="0dp"
+    android:contentInsetStart="0dp">
 
-    <ImageView
-        android:id="@+id/img_back_Toobar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/dimens_margin"
-        />
-
-    <TextView
-        android:id="@+id/txt_name_Toobar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_toLeftOf="@id/img_notification_Toobar"
-        android:layout_toRightOf="@id/img_back_Toobar"
-        android:fontFamily="@font/roboto_medium"
-        android:gravity="center"
-        android:textColor="@color/color_WhiteTextView"
-        android:textSize="@dimen/textMedium"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_toLeftOf="@id/img_QR_Toobar"
-        android:src="@drawable/hotline"
-        android:id="@+id/img_phone_Toobar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/dimens_margin"
-        />
-    <ImageView
-        android:layout_toLeftOf="@id/img_notification_Toobar"
-        android:src="@drawable/qr"
-        android:id="@+id/img_QR_Toobar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/dimens_margin"
-        />
-    <ImageView
-        android:src="@drawable/bell"
-        android:id="@+id/img_notification_Toobar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/dimens_margin"
-         />
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/img_back_Toobar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimens_margin" />
+
+        <TextView
+            android:id="@+id/txt_name_Toobar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/img_notification_Toobar"
+            android:layout_toRightOf="@id/img_back_Toobar"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:textColor="@color/color_WhiteTextView"
+            android:textSize="@dimen/textMedium"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_phone_Toobar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dimens_margin"
+            android:layout_toLeftOf="@id/img_QR_Toobar"
+            android:src="@drawable/hotline" />
+
+        <ImageView
+            android:id="@+id/img_QR_Toobar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dimens_margin"
+            android:layout_toLeftOf="@id/img_notification_Toobar"
+            android:src="@drawable/qr" />
+
+        <ImageView
+            android:id="@+id/img_notification_Toobar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dimens_margin"
+            android:src="@drawable/bell" />
+    </RelativeLayout>
+</android.support.v7.widget.Toolbar>

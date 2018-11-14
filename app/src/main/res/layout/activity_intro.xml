@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Intro.Intro"
+    android:background="@drawable/intro"
+    >
+
+    <android.support.v4.view.ViewPager
+        android:layout_below="@id/btn_skip"
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_above="@+id/layoutDots"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_Login_Intro"
+            android:textSize="@dimen/textMedium"
+            android:gravity="right|center"
+            android:textAllCaps="false"
+            android:textColor="@color/color_WhiteTextView"
+            android:text="@string/txt_login"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:alpha="0.3"
+            android:background="@color/color_WhiteTextView"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            />
+        <Button
+            android:id="@+id/btn_SignUp_Intro"
+            android:textSize="@dimen/textMedium"
+            android:gravity="left|center"
+            android:textAllCaps="false"
+            android:textColor="@color/color_WhiteTextView"
+            android:background="@android:color/transparent"
+            android:text="@string/txt_signup"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layoutDots"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dots_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dots_margin_bottom"
+        android:gravity="center"
+        android:orientation="horizontal"></LinearLayout>
+
+
+    <Button
+        android:visibility="invisible"
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:text="@string/txt_next"
+        android:textColor="#FFF" />
+
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:text="@string/txt_skip"
+        android:textColor="#FFF" />
+</RelativeLayout>

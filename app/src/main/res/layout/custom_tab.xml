@@ -2,8 +2,10 @@
     android:id="@+id/tab"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     android:textColor="@color/color_text_tablayoutactivity"
     android:textAllCaps="false"
     android:textSize="9sp"
+    android:lines="2"
+    android:ellipsize="end"
      />

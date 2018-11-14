@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/dimens_sizecardview"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/dimens_margin"
+    android:background="#FFFFFF"
+    app:cardCornerRadius="@dimen/dimes_radiusDp"
+    app:cardElevation="5dp"
+    >
+    <RelativeLayout
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/img_batdongsan"
+            android:layout_width="@dimen/dimens_sizeimages"
+            android:layout_height="@dimen/dimens_sizeimagesHe" />
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="@dimen/textbatdongsan"
+            android:layout_width="@dimen/dimens_sizeimages"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:ellipsize="end"
+            android:id="@+id/txt_category"
+            android:padding="@dimen/dimens_padding10dp"
+            android:layout_below="@+id/img_batdongsan"
+            />
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="@dimen/textbatdongsan"
+            android:layout_width="@dimen/dimens_sizeimages"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:ellipsize="end"
+            android:id="@+id/txt_title"
+            android:padding="@dimen/dimens_padding10dp"
+            android:layout_below="@+id/txt_category"
+            />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

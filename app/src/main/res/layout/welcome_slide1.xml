@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/img_logo_welcome1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/logo_nks" />
+
+    <TextView
+        android:id="@+id/txt_title_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_logo_welcome1"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Travel and City Guide Platform"
+        android:lines="2"
+        android:ellipsize="end"
+        android:textSize="30dp"
+        android:textColor="#FFFFFF"
+        />
+    <TextView
+        android:id="@+id/txt_title_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_title_1"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="Lorem Ipsum is simply dummy text"
+        android:lines="2"
+        android:ellipsize="end"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        />
+</RelativeLayout>

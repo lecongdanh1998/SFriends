@@ -1,0 +1,24 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#bcbab8">
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <GridView
+            android:numColumns="2"
+            android:nestedScrollingEnabled="true"
+            android:id="@+id/girdview_albums"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"></GridView>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</FrameLayout>

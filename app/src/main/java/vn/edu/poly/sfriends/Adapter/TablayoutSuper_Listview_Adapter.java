@@ -1,6 +1,8 @@
 package vn.edu.poly.sfriends.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,15 +20,20 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 import vn.edu.poly.sfriends.Model.TabLayoutSuper_listiew;
 import vn.edu.poly.sfriends.R;
+import vn.edu.poly.sfriends.View.HomePage.HomePage;
+import vn.edu.poly.sfriends.View.HomePage.WebViewMain;
+import vn.edu.poly.sfriends.View.MainActivity;
 
 public class TablayoutSuper_Listview_Adapter extends BaseAdapter {
     ArrayList<TabLayoutSuper_listiew> arrayList;
     Context context;
     LayoutInflater inflater;
+    Activity  homePage;
 
-    public TablayoutSuper_Listview_Adapter(ArrayList<TabLayoutSuper_listiew> arrayList, Context context) {
+    public TablayoutSuper_Listview_Adapter(ArrayList<TabLayoutSuper_listiew> arrayList, Context context,Activity homePage) {
         this.arrayList = arrayList;
         this.context = context;
+        this.homePage = homePage;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -90,10 +97,22 @@ public class TablayoutSuper_Listview_Adapter extends BaseAdapter {
         viewHolder.RelativeLayoutClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, ""+position, Toast.LENGTH_SHORT).show();
+                switch (position){
+                    case 0:
+                        intentView(WebViewMain.class);
+                        break;
+                }
             }
         });
         return convertView;
+    }
+
+    private void intentView(Class c) {
+        Intent intent = new Intent(context, c);
+        context.startActivity(intent);
+        homePage.finish();
+        homePage.overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
+
     }
 
     class ViewHolder{

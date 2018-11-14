@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
@@ -27,6 +28,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,21 +48,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import vn.edu.poly.sfriends.Adapter.LoginAdapterRycer;
 import vn.edu.poly.sfriends.Component.BaseActivity;
 import vn.edu.poly.sfriends.Model.LoginContrucstor;
 import vn.edu.poly.sfriends.R;
 import vn.edu.poly.sfriends.Server.ApiConnect;
 import vn.edu.poly.sfriends.Util.ValidateForm;
+import vn.edu.poly.sfriends.View.Intro.Intro;
 import vn.edu.poly.sfriends.View.MainActivity;
 import vn.edu.poly.sfriends.View.SplashScreen;
 
 public class SignIn extends BaseActivity implements View.OnClickListener {
     TextView txt_login_SignIn, txt_NameUser_SignIn, txt_signinwith_SignIn;
-    ImageView img_ImagesUser_signup;
-    LinearLayout LNL_LOGIN_SIGNIN, LNL_3_SignIn, LNL_2M_SignIn;
-    TextInputLayout textInput_username_signIn, textInput_password_signIn;
-    AppCompatEditText edt_user_signIn, edt_password__signIn;
+    CircleImageView img_ImagesUser_signup;
+    LinearLayout LNL_LOGIN_SIGNIN, LNL_3_SignIn;
+    TextInputLayout textInput_username_signIn,textInput_username_signIn123,textInput_username_signIn123456, textInput_password_signIn,textInput_password_signIn123,textInput_password_signIn123456;
+    AppCompatEditText edt_user_signIn, edt_password__signIn,edt_user_signIn123,edt_user_signIn123456;
     Button btn_Login_SignUp;
     private ProgressDialog progressDialog;
     int NumberKeyBoard = 1;
@@ -74,7 +78,11 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
     String URL_USER = "";
     private String useremail, userpassword;
     String useremail2;
-
+    View rootView;
+    int keyboardHeight;
+    RelativeLayout RelativeLayout_text;
+    ImageView imgEmail,imgEmail123,imgEmail123456;
+    int numBerOne = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,16 +93,27 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
         checkDataLogin();
         JsonUserInfo(URL_USER);
     }
-
     private void initOnClick() {
-
-        edt_user_signIn.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        rootView = getWindow().getDecorView().getRootView();
+        rootView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                if (keyboardShown(edt_user_signIn.getRootView())) {
-                    KeyBoardShow();
-                } else {
-                    KeyBoardHide();
+                Rect rect = new Rect();
+                rootView.getWindowVisibleDisplayFrame(rect);
+                int screenHeight = rootView.getHeight();
+                keyboardHeight = screenHeight - (rect.bottom - rect.top);
+                if(keyboardHeight > screenHeight / 3){
+                    if(numBerOne == 1) {
+                        KeyBoardShow();
+                        numBerOne = 0;
+                        Log.d("hihi","1");
+                    }
+                } else{
+                    if(numBerOne == 0) {
+                        KeyBoardHide();
+                        numBerOne = 1;
+                        Log.d("hihi","2");
+                    }
                 }
             }
         });
@@ -122,6 +141,8 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
         Intent intent = new Intent(SignIn.this, c);
         startActivity(intent);
         finish();
+        overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
+
     }
 
     private void initData() {
@@ -146,19 +167,27 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
     }
 
     private void initControl() {
-        txt_login_SignIn = findViewById(R.id.txt_login_SignIn);
+        textInput_username_signIn123 = findViewById(R.id.textInput_username_signIn123);
+        textInput_username_signIn123456 = findViewById(R.id.textInput_username_signIn123456);
+        edt_user_signIn123= findViewById(R.id.edt_user_signIn123);
+        edt_user_signIn123456 = findViewById(R.id.edt_user_signIn123456);
+        imgEmail123 = findViewById(R.id.imgEmail123);
+        imgEmail123456 = findViewById(R.id.imgEmail123456);
         txt_NameUser_SignIn = findViewById(R.id.txt_NameUser_SignIn);
         txt_signinwith_SignIn = findViewById(R.id.txt_signinwith_SignIn);
-        img_ImagesUser_signup = findViewById(R.id.img_ImagesUser_signup);
+        img_ImagesUser_signup = (CircleImageView) findViewById(R.id.img_ImagesUser_signup);
         LNL_LOGIN_SIGNIN = findViewById(R.id.LNL_LOGIN_SIGNIN);
         LNL_3_SignIn = findViewById(R.id.LNL_3_SignIn);
         textInput_username_signIn = findViewById(R.id.textInput_username_signIn);
         textInput_password_signIn = findViewById(R.id.textInput_password_signIn);
+        textInput_password_signIn123 = findViewById(R.id.textInput_password_signIn123);
+        textInput_password_signIn123456 = findViewById(R.id.textInput_password_signIn123456);
         edt_user_signIn = findViewById(R.id.edt_user_signIn);
         edt_password__signIn = findViewById(R.id.edt_password__signIn);
         btn_Login_SignUp = findViewById(R.id.btn_Login_SignUp);
-        LNL_2M_SignIn = findViewById(R.id.LNL_2M_SignIn);
         mRecyclerView_details = (RecyclerView) findViewById(R.id.RecyclerViewSignIn);
+        RelativeLayout_text = findViewById(R.id.RelativeLayout_text);
+        imgEmail = findViewById(R.id.imgEmail);
 
     }
 
@@ -183,7 +212,10 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
         if (NumberStatus == 0) {
             edt_user_signIn.setVisibility(View.VISIBLE);
             edt_user_signIn.startAnimation(AnimationUtils.loadAnimation(
-                    SignIn.this, R.anim.left));
+                    SignIn.this, R.anim.lefthide));
+            imgEmail.setVisibility(View.VISIBLE);
+            imgEmail.startAnimation(AnimationUtils.loadAnimation(
+                    SignIn.this, R.anim.lefthide));
             txt_signinwith_SignIn.setVisibility(View.INVISIBLE);
             txt_signinwith_SignIn.startAnimation(AnimationUtils.loadAnimation(
                     SignIn.this, R.anim.right));
@@ -193,16 +225,27 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
             LNL_LOGIN_SIGNIN.setVisibility(View.INVISIBLE);
             LNL_LOGIN_SIGNIN.startAnimation(AnimationUtils.loadAnimation(
                     SignIn.this, R.anim.left));
+            edt_user_signIn123.setVisibility(View.INVISIBLE);
+            edt_user_signIn123456.setVisibility(View.INVISIBLE);
+            imgEmail123.setVisibility(View.INVISIBLE);
+            imgEmail123456.setVisibility(View.INVISIBLE);
             NumberTrangThai = 3;
 
         }
         if (NumberStatus == 1) {
+            imgEmail.setVisibility(View.VISIBLE);
+            imgEmail.startAnimation(AnimationUtils.loadAnimation(
+                    SignIn.this, R.anim.lefthide));
             edt_user_signIn.setVisibility(View.VISIBLE);
             edt_user_signIn.startAnimation(AnimationUtils.loadAnimation(
-                    SignIn.this, R.anim.left));
+                    SignIn.this, R.anim.lefthide));
             txt_signinwith_SignIn.setVisibility(View.INVISIBLE);
             txt_signinwith_SignIn.startAnimation(AnimationUtils.loadAnimation(
                     SignIn.this, R.anim.right));
+            edt_user_signIn123.setVisibility(View.INVISIBLE);
+            edt_user_signIn123456.setVisibility(View.INVISIBLE);
+            imgEmail123.setVisibility(View.INVISIBLE);
+            imgEmail123456.setVisibility(View.INVISIBLE);
             NumberTrangThai = 3;
 
         }
@@ -257,13 +300,12 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
     }
 
     private void KeyBoardShow() {
+
         if (NumberKeyBoard == 1) {
             if (NumberTrangThai == 2) {
+                imgEmail.setVisibility(View.GONE);
                 edt_user_signIn.setVisibility(View.GONE);
                 mRecyclerView_details.setVisibility(View.GONE);
-                LNL_2M_SignIn.setVisibility(View.GONE);
-                LNL_2M_SignIn.startAnimation(AnimationUtils.loadAnimation(
-                        SignIn.this, R.anim.left));
                 img_ImagesUser_signup.setVisibility(View.INVISIBLE);
                 img_ImagesUser_signup.startAnimation(AnimationUtils.loadAnimation(
                         SignIn.this, R.anim.right));
@@ -272,15 +314,15 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
                 LNL_LOGIN_SIGNIN.setVisibility(View.INVISIBLE);
                 LNL_LOGIN_SIGNIN.startAnimation(AnimationUtils.loadAnimation(
                         SignIn.this, R.anim.left));
+                RelativeLayout_text.setVisibility(View.GONE);
             }
             if (NumberTrangThai == 3) {
+                imgEmail.setVisibility(View.VISIBLE);
                 edt_user_signIn.setVisibility(View.VISIBLE);
                 mRecyclerView_details.setVisibility(View.GONE);
-                LNL_2M_SignIn.setVisibility(View.GONE);
-                LNL_2M_SignIn.startAnimation(AnimationUtils.loadAnimation(
-                        SignIn.this, R.anim.left));
                 LNL_3_SignIn.startAnimation(AnimationUtils.loadAnimation(
                         SignIn.this, R.anim.top));
+                RelativeLayout_text.setVisibility(View.GONE);
             }
 
             NumberKeyBoard = 0;
@@ -293,12 +335,13 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
     private void KeyBoardHide() {
         if (NumberKeyBoard == 0) {
             if (NumberTrangThai == 2) {
+                RelativeLayout_text.setVisibility(View.VISIBLE);
                 edt_user_signIn.setVisibility(View.GONE);
+                imgEmail.setVisibility(View.GONE);
                 mRecyclerView_details.setVisibility(View.VISIBLE);
                 LNL_LOGIN_SIGNIN.setVisibility(View.VISIBLE);
                 LNL_LOGIN_SIGNIN.startAnimation(AnimationUtils.loadAnimation(
                         SignIn.this, R.anim.lefthide));
-                LNL_2M_SignIn.setVisibility(View.VISIBLE);
                 img_ImagesUser_signup.setVisibility(View.VISIBLE);
                 img_ImagesUser_signup.startAnimation(AnimationUtils.loadAnimation(
                         SignIn.this, R.anim.righthide));
@@ -306,11 +349,15 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
                         SignIn.this, R.anim.bottom));
             }
             if (NumberTrangThai == 3) {
+                LNL_LOGIN_SIGNIN.setVisibility(View.INVISIBLE);
+                img_ImagesUser_signup.setVisibility(View.INVISIBLE);
+                RelativeLayout_text.setVisibility(View.VISIBLE);
                 edt_user_signIn.setVisibility(View.VISIBLE);
+                imgEmail.setVisibility(View.VISIBLE);
                 mRecyclerView_details.setVisibility(View.VISIBLE);
-                LNL_2M_SignIn.setVisibility(View.VISIBLE);
                 LNL_3_SignIn.startAnimation(AnimationUtils.loadAnimation(
                         SignIn.this, R.anim.bottom));
+
 
             }
 
@@ -328,12 +375,22 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
             img_ImagesUser_signup.setVisibility(View.VISIBLE);
             LNL_LOGIN_SIGNIN.setVisibility(View.VISIBLE);
             edt_user_signIn.setVisibility(View.GONE);
+            imgEmail.setVisibility(View.GONE);
+            edt_user_signIn123.setVisibility(View.GONE);
+            edt_user_signIn123456.setVisibility(View.GONE);
+            imgEmail123.setVisibility(View.GONE);
+            imgEmail123456.setVisibility(View.GONE);
             NumberTrangThai = 2;
         } else {
             txt_signinwith_SignIn.setVisibility(View.INVISIBLE);
             img_ImagesUser_signup.setVisibility(View.INVISIBLE);
             LNL_LOGIN_SIGNIN.setVisibility(View.INVISIBLE);
             edt_user_signIn.setVisibility(View.VISIBLE);
+            imgEmail.setVisibility(View.VISIBLE);
+            edt_user_signIn123.setVisibility(View.INVISIBLE);
+            edt_user_signIn123456.setVisibility(View.INVISIBLE);
+            imgEmail123.setVisibility(View.INVISIBLE);
+            imgEmail123456.setVisibility(View.INVISIBLE);
             NumberTrangThai = 3;
         }
 
@@ -411,6 +468,10 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
             if (new ValidateForm().validateTextEmpty(useremail)) {
                 textInput_username_signIn.setHint("Enter your email!");
                 textInput_username_signIn.setError("Please enter your email!");
+                textInput_username_signIn123.setHint("Enter your email!");
+                textInput_username_signIn123.setError("Please enter your email!");
+                textInput_username_signIn123456.setHint("Enter your email!");
+                textInput_username_signIn123456.setError("Please enter your email!");
                 errorCode++;
             }
         }
@@ -419,6 +480,11 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
         if (new ValidateForm().validateTextEmpty(userpassword)) {
             textInput_password_signIn.setHint("Enter your password!");
             textInput_password_signIn.setError("Please enter your password!");
+            textInput_password_signIn123.setHint("Enter your password!");
+            textInput_password_signIn123.setError("Please enter your password!");
+            textInput_password_signIn123456.setHint("Enter your password!");
+            textInput_password_signIn123456.setError("Please enter your password!");
+
             errorCode++;
         }
 
@@ -429,5 +495,12 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
 //        intentView(MainActivity.class);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SignIn.this, Intro.class);
+        startActivity(intent);
+        finish();
+        overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
 
+    }
 }

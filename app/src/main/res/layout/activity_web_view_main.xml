@@ -5,7 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.HomePage.WebViewMain">
+    <include
+        layout="@layout/toobar_webview"
+        android:id="@+id/toobar_webview"
+        />
     <WebView
+        android:layout_below="@id/toobar_webview"
         android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></WebView>

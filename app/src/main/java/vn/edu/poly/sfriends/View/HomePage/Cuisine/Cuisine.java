@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import vn.edu.poly.sfriends.Adapter.TablayoutSuper_Listview_Adapter;
 import vn.edu.poly.sfriends.Model.TabLayoutSuper_listiew;
 import vn.edu.poly.sfriends.R;
+import vn.edu.poly.sfriends.View.HomePage.HomePage;
+import vn.edu.poly.sfriends.View.MainActivity;
 
 public class Cuisine extends Fragment {
     private View view;
@@ -24,6 +26,7 @@ public class Cuisine extends Fragment {
     TablayoutSuper_Listview_Adapter adapter;
     ListView listView;
     NestedScrollView nestedScrollView;
+    MainActivity homePage;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -87,7 +90,7 @@ public class Cuisine extends Fragment {
                 "- 50 %"
         ));
 
-        adapter = new TablayoutSuper_Listview_Adapter(arrayList,getActivity());
+        adapter = new TablayoutSuper_Listview_Adapter(arrayList,getActivity(),getActivity());
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 

@@ -39,7 +39,6 @@
                     android:layout_toRightOf="@+id/avatar_user_main_listview"
                     android:ellipsize="end"
                     android:lines="1"
-                    android:text="Passio Coffee"
                     android:textSize="18sp" />
             </RelativeLayout>
 
@@ -58,7 +57,6 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/roboto_regular"
                 android:lines="1"
-                android:text="PASSIO - Giảm 50% sản phẩm Latte đá cho khách cực chất"
                 android:textSize="18sp" />
 
             <RelativeLayout
@@ -72,7 +70,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="23:00"
                     android:textSize="16sp" />
 
                 <TextView
@@ -86,7 +83,6 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/roboto_thin"
                     android:lines="1"
-                    android:text="30/11/2018"
                     android:textSize="16sp" />
 
                 <TextView
@@ -96,10 +92,9 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="5dp"
                     android:layout_toLeftOf="@id/txt_like_lisivew_custom"
-                    android:drawableRight="@drawable/ic_account_box_black_24dp"
+                    android:drawableRight="@drawable/chatbubble"
                     android:drawablePadding="5dp"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="168"
                     android:textSize="16sp" />
 
                 <TextView
@@ -109,10 +104,9 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="5dp"
                     android:layout_toLeftOf="@id/txt_star_lisivew_custom"
-                    android:drawableRight="@drawable/ic_account_box_black_24dp"
+                    android:drawableRight="@drawable/like20"
                     android:drawablePadding="5dp"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="110"
                     android:textSize="16sp" />
 
                 <TextView
@@ -122,10 +116,9 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="5dp"
-                    android:drawableRight="@drawable/ic_account_box_black_24dp"
+                    android:drawableRight="@drawable/star20"
                     android:drawablePadding="5dp"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="4.8"
                     android:textSize="16sp" />
             </RelativeLayout>
         </LinearLayout>
@@ -134,7 +127,6 @@
         android:textColor="#FFFFFF"
         android:background="#ff0000"
         android:textSize="18sp"
-        android:text="- 50 %"
         android:id="@+id/btn_khuyenmai_listview"
         android:layout_marginRight="32dp"
         android:layout_alignParentRight="true"

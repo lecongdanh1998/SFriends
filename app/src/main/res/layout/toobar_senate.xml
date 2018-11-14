@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimens_heigth_toobar"
+    android:background="@color/color_Toobar">
+
+    <ImageView
+        android:id="@+id/img_back_ToobarSenate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_arrow_back_white_24dp" />
+
+    <TextView
+        android:id="@+id/txt_title_ToobarSenate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toLeftOf="@id/img_find_ToobarSenate"
+        android:layout_toRightOf="@+id/img_back_ToobarSenate"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:lines="1"
+        android:text="@string/txt_senate"
+        android:textColor="@color/color_WhiteTextView"
+        android:textSize="@dimen/textTitToobar" />
+
+    <ImageView
+        android:layout_toLeftOf="@id/txt_personal_ToobarSenate"
+        android:id="@+id/img_find_ToobarSenate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_filter_list_black_24dp" />
+
+    <TextView
+        android:id="@+id/txt_personal_ToobarSenate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:lines="1"
+        android:layout_alignParentRight="true"
+        android:text="@string/txt_personal"
+        android:textColor="@color/color_WhiteTextView"
+        android:textSize="14sp" />
+</RelativeLayout>

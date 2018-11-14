@@ -246,6 +246,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         Intent intent = new Intent(MainActivity.this, c);
         startActivity(intent);
         finish();
+        overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
     }
 
     @Override

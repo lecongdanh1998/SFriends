@@ -1,0 +1,260 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/RLTlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.2"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/txt_Name_postdetails1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:fitsSystemWindows="true"
+                android:lines="1"
+                android:scaleType="centerCrop"
+                android:visibility="invisible" />
+
+
+            <TextView
+                android:id="@+id/txt_Day_postdetails1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_Name_postdetails1"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/dimes_margin5Dp"
+                android:fitsSystemWindows="true"
+                android:lines="1"
+                android:scaleType="centerCrop"
+                android:text="THỨ 6, NGÀY 2 THÁNG 11"
+                android:visibility="invisible" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/txt_Day_postdetails1"
+                android:layout_marginTop="30dp"
+                android:background="@android:color/transparent"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_Name_postdetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fitsSystemWindows="true"
+            android:fontFamily="@font/roboto_bold"
+            android:lines="1"
+            android:scaleType="centerCrop"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_Day_postdetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_Name_postdetails"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/dimes_margin5Dp"
+            android:fitsSystemWindows="true"
+            android:lines="1"
+            android:scaleType="centerCrop"
+            android:text="THỨ 6, NGÀY 2 THÁNG 11" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/txt_Day_postdetails"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RLTlayout"
+        android:layout_marginTop="@dimen/dimes_margin10Dp"
+        android:horizontalSpacing="0dp"
+        android:nestedScrollingEnabled="true"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="0dp"></GridView>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/hot_deal_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/gridView1"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingLeft="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:paddingRight="@dimen/card_padding"></android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_batdongsan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hot_deal_view_pager"
+        android:layout_marginTop="@dimen/dimens_khoangcachComponent"
+        android:layout_marginBottom="@dimen/dimens_khoangcachComponent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_title_batdongsan_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimes_margin10Dp"
+                android:layout_toLeftOf="@+id/img_btn_batdongsan_homepage"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@string/txt_Realestatearound"
+                android:textColor="@color/color_WhiteTextView"
+                android:textSize="@dimen/texthomepage"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_btn_batdongsan_homepage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/dimes_margin10Dp"
+                android:src="@drawable/mapwhite" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcy_batdongsan_homepage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/hot_deal_view_pagerQuangCao"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/LinearLayout_batdongsan"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingLeft="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:paddingRight="@dimen/card_padding"></android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_Sagora_homepage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hot_deal_view_pagerQuangCao"
+        android:layout_marginTop="@dimen/dimens_khoangcachComponent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_title_Sagora_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimes_margin10Dp"
+                android:layout_toLeftOf="@+id/txt_btn_allsagora_homepage"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@string/txt_sagora"
+                android:textColor="@color/color_WhiteTextView"
+                android:textSize="@dimen/texthomepage"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_btn_allsagora_homepage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/dimes_margin10Dp"
+                android:text="@string/txt_all"
+                android:textColor="@color/colorBlue"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gridViewSagora_homepage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:horizontalSpacing="0dp"
+            android:nestedScrollingEnabled="true"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="0dp"></GridView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_thuonghieuviet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LinearLayout_Sagora_homepage"
+        android:layout_marginTop="@dimen/dimens_khoangcachComponent"
+        android:layout_marginBottom="@dimen/dimens_khoangcachComponent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_title_thuonghieu_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimes_margin10Dp"
+                android:layout_toLeftOf="@+id/txt_btn_allthuonghieuviet_homepage"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@string/txt_Vietnamesebrand"
+                android:textColor="@color/color_WhiteTextView"
+                android:textSize="@dimen/texthomepage"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_btn_allthuonghieuviet_homepage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/dimes_margin10Dp"
+                android:text="@string/txt_all"
+                android:textColor="@color/colorBlue"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gridView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:horizontalSpacing="0dp"
+            android:nestedScrollingEnabled="true"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="0dp"></GridView>
+    </LinearLayout>
+
+</RelativeLayout>
