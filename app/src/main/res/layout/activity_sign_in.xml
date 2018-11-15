@@ -5,13 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
-    android:background="@drawable/intro"
+    android:background="@drawable/logoappbackground"
     tools:context=".View.SignIn.SignIn">
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.5"
-        android:background="@color/color_blackBackground" />
+
 
     <LinearLayout
         android:id="@+id/LNL_1_SignIn"

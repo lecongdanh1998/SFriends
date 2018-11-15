@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.HomePage.WebViewMain">
+    tools:context=".View.HomePage.WebView.WebViewMain">
     <include
         layout="@layout/toobar_webview"
         android:id="@+id/toobar_webview"

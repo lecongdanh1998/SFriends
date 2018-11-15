@@ -1,4 +1,4 @@
-package vn.edu.poly.sfriends.View.HomePage;
+package vn.edu.poly.sfriends.View.HomePage.WebView;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,12 +10,12 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import vn.edu.poly.sfriends.Component.BaseActivity;
 import vn.edu.poly.sfriends.Model.MyWebViewClient;
 import vn.edu.poly.sfriends.R;
 import vn.edu.poly.sfriends.View.MainActivity;
-import vn.edu.poly.sfriends.View.SignIn.SignIn;
 
-public class WebViewMain extends AppCompatActivity implements View.OnClickListener {
+public class WebViewMain extends BaseActivity implements View.OnClickListener {
     private WebView webView;
     String url = "https://www.tugo.com.vn/";
     ImageView img_back;

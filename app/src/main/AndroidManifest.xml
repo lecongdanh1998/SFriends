@@ -10,11 +10,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/iconapp1"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity android:name=".View.MainActivity" />
         <activity
@@ -27,12 +27,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.HomePage.WebViewMain" />
+        <activity android:name=".View.HomePage.WebView.WebViewMain" />
         <activity android:name=".View.Intro.Intro" />
         <activity android:name=".View.SignUp.SignUp" />
         <activity android:name=".View.HomePage.Sarena.Sarena" />
         <activity android:name=".View.HomePage.Senate.Senate" />
-        <activity android:name=".View.HomePage.Sagora.Sagora"></activity>
+        <activity android:name=".View.HomePage.Sagora.Sagora" />
+        <activity android:name=".View.User.UserActivity"></activity>
     </application>
 
 </manifest>

@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -20,9 +19,7 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 import vn.edu.poly.sfriends.Model.TabLayoutSuper_listiew;
 import vn.edu.poly.sfriends.R;
-import vn.edu.poly.sfriends.View.HomePage.HomePage;
-import vn.edu.poly.sfriends.View.HomePage.WebViewMain;
-import vn.edu.poly.sfriends.View.MainActivity;
+import vn.edu.poly.sfriends.View.HomePage.WebView.WebViewMain;
 
 public class TablayoutSuper_Listview_Adapter extends BaseAdapter {
     ArrayList<TabLayoutSuper_listiew> arrayList;

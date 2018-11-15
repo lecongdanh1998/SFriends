@@ -46,8 +46,8 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:alpha="0.2"
-                    android:background="#FFFFFF"></RelativeLayout>
+                    android:alpha="0.5"
+                    android:background="#0077bb"></RelativeLayout>
 
                 <android.support.design.widget.TabLayout
                     android:id="@+id/tabs"

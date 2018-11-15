@@ -113,7 +113,8 @@ public class HomePage extends Fragment {
     RelativeLayout RLTlayout;
     CardFragmentPagerAdapter pagerAdapter;
     AppBarLayout appBar;
-    TextView txt_name_Toobar;
+    TextView txt_name_Toobar,toolbar_title;
+    ImageView img_logoMain;
     int NumberOne = 0;
     Runnable runnable = new Runnable() {
         public void run() {
@@ -173,6 +174,9 @@ public class HomePage extends Fragment {
     }
 
     private void initData() {
+        toolbar_title.setVisibility(View.INVISIBLE);
+        img_logoMain.setVisibility(View.VISIBLE);
+        img_logoMain.setImageResource(R.drawable.logoapp);
         BaseActivity.editorUser = BaseActivity.dataLoginUser.edit();
         emailUser = BaseActivity.dataLoginUser.getString("useremail", "");
         BaseActivity.token = BaseActivity.dataLoginUser.getString("usertoken", "");
@@ -254,6 +258,10 @@ public class HomePage extends Fragment {
         txt_Name_postdetails = view.findViewById(R.id.txt_Name_postdetails);
         mRecyclerView_details = view.findViewById(R.id.rcy_batdongsan_homepage);
         gridViewSagora = view.findViewById(R.id.gridViewSagora_homepage);
+        img_logoMain = getActivity().findViewById(R.id.img_logoMain);
+        toolbar_title =  getActivity().findViewById(R.id.txt_name_Toobar);
+
+
 
 
     }
