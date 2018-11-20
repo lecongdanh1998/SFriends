@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="3"
+    android:focusableInTouchMode="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInput_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:scrollbars="vertical"
+            android:textColorHint="@color/colorBlue"
+            app:errorTextAppearance="@style/HintTextError"
+            app:hintEnabled="true"
+            app:hintTextAppearance="@style/HintText">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edt_user_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/textlines"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:cursorVisible="true"
+                android:fontFamily="@font/roboto_medium"
+                android:hint="@string/txt_emailUser"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:paddingTop="@dimen/padding_edt_form_signIn"
+                android:paddingBottom="@dimen/padding_edt_form_signIn"
+                android:scrollbars="vertical"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorBlue"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:textSize="@dimen/textMedium" />
+        </android.support.design.widget.TextInputLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_cancel_user"
+            android:layout_toLeftOf="@+id/btn_finish_user"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:textSize="@dimen/textsize_medium"
+            android:text="@string/txt_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_finish_user"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:textColor="#0077bb"
+            android:textSize="@dimen/textsize_medium"
+            android:text="@string/txt_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</LinearLayout>

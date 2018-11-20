@@ -21,10 +21,11 @@ public class WebViewMain extends BaseActivity implements View.OnClickListener {
     ImageView img_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view_main);
         initControl();
         initData();

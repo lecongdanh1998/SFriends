@@ -47,6 +47,7 @@ import vn.edu.poly.sfriends.R;
 import vn.edu.poly.sfriends.Server.ApiConnect;
 import vn.edu.poly.sfriends.View.HomePage.HomePage;
 import vn.edu.poly.sfriends.View.SignIn.SignIn;
+import vn.edu.poly.sfriends.View.User.UserActivity;
 
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
     private DrawerLayout drawer_layout;
@@ -176,6 +177,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case R.id.btn_logout_main:
                 AlertDialogLogOut();
+                break;
+            case R.id.layout_header_navigation_main:
+                intentView(UserActivity.class);
                 break;
         }
     }

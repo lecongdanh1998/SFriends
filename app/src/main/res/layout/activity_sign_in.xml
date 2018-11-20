@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusableInTouchMode="true"
     android:background="@drawable/logoappbackground"
+    android:focusableInTouchMode="true"
     tools:context=".View.SignIn.SignIn">
 
 
@@ -58,491 +58,515 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ScrollView
+        android:fillViewport="true"
         android:layout_below="@id/LNL_1_SignIn"
-        android:orientation="vertical"
-        android:weightSum="3">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/RelativeLayout_text"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3">
 
-            <LinearLayout
-                android:id="@+id/LNL_2_SignIn"
+            <RelativeLayout
+                android:id="@+id/RelativeLayout_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimens_padding20dp"
-                android:orientation="horizontal"
-                android:padding="@dimen/dimens_padding10dp">
-                <RelativeLayout
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/LNL_2_SignIn"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/img_ImagesUser_signup"
-                        android:layout_width="@dimen/imagesSize"
-                        android:layout_height="@dimen/imagesSize"
-                        android:layout_alignParentRight="true"
-                        android:visibility="invisible" />
-                    <LinearLayout
-                        android:id="@+id/LNL_LOGIN_SIGNIN"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_padding20dp"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimens_padding10dp">
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerInParent="true"
-                        android:layout_toLeftOf="@id/img_ImagesUser_signup"
-                        android:orientation="vertical"
-                        android:paddingRight="@dimen/dimens_padding10dp"
-                        android:visibility="invisible">
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/txt_hello"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_regular"
-                            android:lines="1"
-                            android:text="@string/txt_hello"
-                            android:textColor="@color/color_WhiteTextView" />
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/img_ImagesUser_signup"
+                            android:layout_width="@dimen/imagesSize"
+                            android:layout_height="@dimen/imagesSize"
+                            android:layout_alignParentRight="true"
+                            android:visibility="invisible" />
 
-                        <TextView
-                            android:id="@+id/txt_NameUser_SignIn"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:id="@+id/LNL_LOGIN_SIGNIN"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_centerInParent="true"
                             android:layout_toLeftOf="@id/img_ImagesUser_signup"
-                            android:lines="1"
+                            android:orientation="vertical"
                             android:paddingRight="@dimen/dimens_padding10dp"
-                            android:textColor="@color/color_WhiteTextView"
-                            android:textSize="@dimen/dimens_testSize25sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </RelativeLayout>
-            </LinearLayout>
-        </RelativeLayout>
-        <LinearLayout
-            android:id="@+id/LNL_3_SignIn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RelativeLayout
-                    android:alpha="0.1"
-                    android:layout_margin="@dimen/dimens_padding10dp"
-                    android:padding="@dimen/dimens_padding20dp"
-                    android:background="@drawable/radiusbackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:visibility="invisible"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:weightSum="3">
+                            android:visibility="invisible">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1">
-                            <ImageView
-                                android:layout_centerVertical="true"
-                                android:id="@+id/imgEmail123456"
+                            <TextView
+                                android:id="@+id/txt_hello"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/email"
-                                />
+                                android:fontFamily="@font/roboto_regular"
+                                android:lines="1"
+                                android:text="@string/txt_hello"
+                                android:textColor="@color/color_WhiteTextView" />
 
-                            <android.support.design.widget.TextInputLayout
-                                android:layout_marginLeft="5dp"
-                                android:layout_toRightOf="@+id/imgEmail123456"
-                                android:id="@+id/textInput_username_signIn123456"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:scrollbars="vertical"
-                                android:textColorHint="@color/colorBlue"
-                                app:errorTextAppearance="@style/HintTextError"
-                                app:hintEnabled="true"
-                                app:hintTextAppearance="@style/HintText">
-
-                                <android.support.v7.widget.AppCompatEditText
-                                    android:id="@+id/edt_user_signIn123456"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/textlines"
-                                    android:backgroundTint="@color/colorPrimaryDark"
-                                    android:cursorVisible="true"
-                                    android:fontFamily="@font/roboto_medium"
-                                    android:hint="@string/txt_email"
-                                    android:imeOptions="actionNext"
-                                    android:inputType="textEmailAddress"
-                                    android:paddingTop="@dimen/padding_edt_form_signIn"
-                                    android:paddingBottom="@dimen/padding_edt_form_signIn"
-                                    android:scrollbars="vertical"
-                                    android:textColor="@color/color_WhiteTextView"
-                                    android:textColorHint="@color/colorBlue"
-                                    android:textCursorDrawable="@color/colorPrimary"
-                                    android:textSize="@dimen/textMedium" />
-                            </android.support.design.widget.TextInputLayout>
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="1">
-                            <ImageView
-                                android:layout_centerVertical="true"
-                                android:id="@+id/imgPassword123456"
+                            <TextView
+                                android:id="@+id/txt_NameUser_SignIn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/password123"
-                                />
-                            <android.support.design.widget.TextInputLayout
-                                android:layout_toRightOf="@id/imgPassword123456"
-                                android:layout_toLeftOf="@id/imgPasswordfoggot123456"
-                                android:layout_marginRight="5dp"
-                                android:layout_marginLeft="5dp"
-                                android:id="@+id/textInput_password_signIn123456"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                app:passwordToggleEnabled="true"
-                                app:passwordToggleTint="@color/color_HideShowPassword"
-                                android:scrollbars="vertical"
-                                android:textColorHint="@color/colorBlue"
-                                app:errorTextAppearance="@style/HintTextError"
-                                app:hintEnabled="true"
-                                app:hintTextAppearance="@style/HintText">
-                                <android.support.v7.widget.AppCompatEditText
-
-                                    android:id="@+id/edt_password__signIn123456"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/textlines"
-                                    android:backgroundTint="@color/colorPrimaryDark"
-                                    android:cursorVisible="true"
-                                    android:drawablePadding="5dp"
-                                    android:fontFamily="@font/roboto_medium"
-                                    android:hint="@string/txt_password"
-                                    android:imeOptions="actionDone"
-                                    android:inputType="textPassword"
-                                    android:paddingTop="@dimen/padding_edt_form_signIn"
-                                    android:paddingBottom="@dimen/padding_edt_form_signIn"
-                                    android:scrollbars="vertical"
-                                    android:textColor="@color/color_WhiteTextView"
-                                    android:textColorHint="@color/colorBlue"
-                                    android:textCursorDrawable="@color/colorPrimary"
-                                    android:textSize="@dimen/textMedium" />
-                            </android.support.design.widget.TextInputLayout>
-                            <ImageView
-                                android:layout_alignParentRight="true"
-                                android:layout_centerVertical="true"
-                                android:id="@+id/imgPasswordfoggot123456"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/password1"
-                                />
-                        </RelativeLayout>
-
-                        <Button
-                            android:id="@+id/btn_Login_SignUp123456"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/radiusbuttons"
-                            android:text="@string/txt_OK"
-                            android:textColor="@color/color_WhiteTextView"
-                            android:textSize="@dimen/textMedium" />
-                        <Button
-                            android:id="@+id/btn_Login_SignUp123456789"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/radiusbuttons"
-                            android:text="@string/txt_OK"
-                            android:textColor="@color/color_WhiteTextView"
-                            android:textSize="@dimen/textMedium" />
-                    </LinearLayout>
-                </RelativeLayout>
-                <RelativeLayout
-                    android:alpha="0.3"
-                    android:layout_margin="@dimen/dimens_padding10dp"
-                    android:padding="@dimen/dimens_padding20dp"
-                    android:background="@drawable/radiusbackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:visibility="invisible"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:weightSum="3">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1">
-                            <ImageView
-                                android:layout_centerVertical="true"
-                                android:id="@+id/imgEmail123"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/email"
-                                />
-
-                            <android.support.design.widget.TextInputLayout
-                                android:layout_marginLeft="5dp"
-                                android:layout_toRightOf="@+id/imgEmail123"
-                                android:id="@+id/textInput_username_signIn123"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:scrollbars="vertical"
-                                android:textColorHint="@color/colorBlue"
-                                app:errorTextAppearance="@style/HintTextError"
-                                app:hintEnabled="true"
-                                app:hintTextAppearance="@style/HintText">
-
-                                <android.support.v7.widget.AppCompatEditText
-                                    android:id="@+id/edt_user_signIn123"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/textlines"
-                                    android:backgroundTint="@color/colorPrimaryDark"
-                                    android:cursorVisible="true"
-                                    android:fontFamily="@font/roboto_medium"
-                                    android:hint="@string/txt_email"
-                                    android:imeOptions="actionNext"
-                                    android:inputType="textEmailAddress"
-                                    android:paddingTop="@dimen/padding_edt_form_signIn"
-                                    android:paddingBottom="@dimen/padding_edt_form_signIn"
-                                    android:scrollbars="vertical"
-                                    android:textColor="@color/color_WhiteTextView"
-                                    android:textColorHint="@color/colorBlue"
-                                    android:textCursorDrawable="@color/colorPrimary"
-                                    android:textSize="@dimen/textMedium" />
-                            </android.support.design.widget.TextInputLayout>
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="1">
-                            <ImageView
-                                android:layout_centerVertical="true"
-                                android:id="@+id/imgPassword123"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/password123"
-                                />
-                            <android.support.design.widget.TextInputLayout
-                                android:layout_toRightOf="@id/imgPassword123"
-                                android:layout_toLeftOf="@id/imgPasswordfoggot123"
-                                android:layout_marginRight="5dp"
-                                android:layout_marginLeft="5dp"
-                                android:id="@+id/textInput_password_signIn123"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                app:passwordToggleEnabled="true"
-                                app:passwordToggleTint="@color/color_HideShowPassword"
-                                android:scrollbars="vertical"
-                                android:textColorHint="@color/colorBlue"
-                                app:errorTextAppearance="@style/HintTextError"
-                                app:hintEnabled="true"
-                                app:hintTextAppearance="@style/HintText">
-                                <android.support.v7.widget.AppCompatEditText
-
-                                    android:id="@+id/edt_password__signIn123"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/textlines"
-                                    android:backgroundTint="@color/colorPrimaryDark"
-                                    android:cursorVisible="true"
-                                    android:drawablePadding="5dp"
-                                    android:fontFamily="@font/roboto_medium"
-                                    android:hint="@string/txt_password"
-                                    android:imeOptions="actionDone"
-                                    android:inputType="textPassword"
-                                    android:paddingTop="@dimen/padding_edt_form_signIn"
-                                    android:paddingBottom="@dimen/padding_edt_form_signIn"
-                                    android:scrollbars="vertical"
-                                    android:textColor="@color/color_WhiteTextView"
-                                    android:textColorHint="@color/colorBlue"
-                                    android:textCursorDrawable="@color/colorPrimary"
-                                    android:textSize="@dimen/textMedium" />
-                            </android.support.design.widget.TextInputLayout>
-                            <ImageView
-                                android:layout_alignParentRight="true"
-                                android:layout_centerVertical="true"
-                                android:id="@+id/imgPasswordfoggot123"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/password1"
-                                />
-                        </RelativeLayout>
-
-                        <Button
-                            android:id="@+id/btn_Login_SignUp123"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/radiusbuttons"
-                            android:text="@string/txt_OK"
-                            android:textColor="@color/color_WhiteTextView"
-                            android:textSize="@dimen/textMedium" />
-                    </LinearLayout>
-                </RelativeLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dimens_padding10dp"
-                android:orientation="vertical"
-                android:padding="@dimen/dimens_padding20dp"
-                android:weightSum="3">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                    <ImageView
-                        android:layout_centerVertical="true"
-                        android:id="@+id/imgEmail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/email"
-                        />
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_marginLeft="5dp"
-                        android:layout_toRightOf="@+id/imgEmail"
-                        android:id="@+id/textInput_username_signIn"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:scrollbars="vertical"
-                        android:textColorHint="@color/colorBlue"
-                        app:errorTextAppearance="@style/HintTextError"
-                        app:hintEnabled="true"
-                        app:hintTextAppearance="@style/HintText">
-
-                        <android.support.v7.widget.AppCompatEditText
-                            android:id="@+id/edt_user_signIn"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/textlines"
-                            android:backgroundTint="@color/colorPrimaryDark"
-                            android:cursorVisible="true"
-                            android:fontFamily="@font/roboto_medium"
-                            android:hint="@string/txt_email"
-                            android:imeOptions="actionNext"
-                            android:inputType="textEmailAddress"
-                            android:paddingTop="@dimen/padding_edt_form_signIn"
-                            android:paddingBottom="@dimen/padding_edt_form_signIn"
-                            android:scrollbars="vertical"
-                            android:textColor="@color/color_WhiteTextView"
-                            android:textColorHint="@color/colorBlue"
-                            android:textCursorDrawable="@color/colorPrimary"
-                            android:textSize="@dimen/textMedium" />
-                    </android.support.design.widget.TextInputLayout>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1">
-                    <ImageView
-                        android:layout_centerVertical="true"
-                        android:id="@+id/imgPassword"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/password123"
-                        />
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_toRightOf="@id/imgPassword"
-                        android:layout_toLeftOf="@id/imgPasswordfoggot"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:id="@+id/textInput_password_signIn"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="@color/color_HideShowPassword"
-                        android:scrollbars="vertical"
-                        android:textColorHint="@color/colorBlue"
-                        app:errorTextAppearance="@style/HintTextError"
-                        app:hintEnabled="true"
-                        app:hintTextAppearance="@style/HintText">
-                        <android.support.v7.widget.AppCompatEditText
-
-                            android:id="@+id/edt_password__signIn"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/textlines"
-                            android:backgroundTint="@color/colorPrimaryDark"
-                            android:cursorVisible="true"
-                            android:drawablePadding="5dp"
-                            android:fontFamily="@font/roboto_medium"
-                            android:hint="@string/txt_password"
-                            android:imeOptions="actionDone"
-                            android:inputType="textPassword"
-                            android:paddingTop="@dimen/padding_edt_form_signIn"
-                            android:paddingBottom="@dimen/padding_edt_form_signIn"
-                            android:scrollbars="vertical"
-                            android:textColor="@color/color_WhiteTextView"
-                            android:textColorHint="@color/colorBlue"
-                            android:textCursorDrawable="@color/colorPrimary"
-                            android:textSize="@dimen/textMedium" />
-                    </android.support.design.widget.TextInputLayout>
-                    <ImageView
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:id="@+id/imgPasswordfoggot"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/password1"
-                        />
-                </RelativeLayout>
-
-                <Button
-                    android:id="@+id/btn_Login_SignUp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/radiusbuttons"
-                    android:text="@string/txt_OK"
-                    android:textColor="@color/color_WhiteTextView"
-                    android:textSize="@dimen/textMedium" />
-            </LinearLayout>
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerInParent="true"
+                                android:layout_toLeftOf="@id/img_ImagesUser_signup"
+                                android:lines="1"
+                                android:paddingRight="@dimen/dimens_padding10dp"
+                                android:textColor="@color/color_WhiteTextView"
+                                android:textSize="@dimen/dimens_testSize25sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
             </RelativeLayout>
-            <TextView
-                android:id="@+id/txt_signinwith_SignIn"
+
+            <LinearLayout
+                android:id="@+id/LNL_3_SignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimens_padding10dp"
-                android:gravity="center"
-                android:text="@string/txt_signinwith"
-                android:textColor="@color/color_WhiteTextView"
-                android:textSize="@dimen/textMedium"
-                android:visibility="invisible" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_padding10dp"
+                        android:alpha="0.1"
+                        android:background="@drawable/radiusbackground"
+                        android:padding="@dimen/dimens_padding20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="invisible"
+                            android:weightSum="3">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/imgEmail123456"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/email" />
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/textInput_username_signIn123456"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toRightOf="@+id/imgEmail123456"
+                                    android:scrollbars="vertical"
+                                    android:textColorHint="@color/colorBlue"
+                                    app:errorTextAppearance="@style/HintTextError"
+                                    app:hintEnabled="true"
+                                    app:hintTextAppearance="@style/HintText">
+
+                                    <android.support.v7.widget.AppCompatEditText
+                                        android:id="@+id/edt_user_signIn123456"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/textlines"
+                                        android:backgroundTint="@color/colorPrimaryDark"
+                                        android:cursorVisible="true"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:hint="@string/txt_email"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="textEmailAddress"
+                                        android:paddingTop="@dimen/padding_edt_form_signIn"
+                                        android:paddingBottom="@dimen/padding_edt_form_signIn"
+                                        android:scrollbars="vertical"
+                                        android:textColor="@color/color_WhiteTextView"
+                                        android:textColorHint="@color/colorBlue"
+                                        android:textCursorDrawable="@color/colorPrimary"
+                                        android:textSize="@dimen/textMedium" />
+                                </android.support.design.widget.TextInputLayout>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/imgPassword123456"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/password123" />
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/textInput_password_signIn123456"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@id/imgPasswordfoggot123456"
+                                    android:layout_toRightOf="@id/imgPassword123456"
+                                    android:scrollbars="vertical"
+                                    android:textColorHint="@color/colorBlue"
+                                    app:errorTextAppearance="@style/HintTextError"
+                                    app:hintEnabled="true"
+                                    app:hintTextAppearance="@style/HintText"
+                                    app:passwordToggleEnabled="true"
+                                    app:passwordToggleTint="@color/color_HideShowPassword">
+
+                                    <android.support.v7.widget.AppCompatEditText
+
+                                        android:id="@+id/edt_password__signIn123456"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/textlines"
+                                        android:backgroundTint="@color/colorPrimaryDark"
+                                        android:cursorVisible="true"
+                                        android:drawablePadding="5dp"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:hint="@string/txt_password"
+                                        android:imeOptions="actionDone"
+                                        android:inputType="textPassword"
+                                        android:paddingTop="@dimen/padding_edt_form_signIn"
+                                        android:paddingBottom="@dimen/padding_edt_form_signIn"
+                                        android:scrollbars="vertical"
+                                        android:textColor="@color/color_WhiteTextView"
+                                        android:textColorHint="@color/colorBlue"
+                                        android:textCursorDrawable="@color/colorPrimary"
+                                        android:textSize="@dimen/textMedium" />
+                                </android.support.design.widget.TextInputLayout>
+
+                                <ImageView
+                                    android:id="@+id/imgPasswordfoggot123456"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/password1" />
+                            </RelativeLayout>
+
+                            <Button
+                                android:id="@+id/btn_Login_SignUp123456"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/radiusbuttons"
+                                android:text="@string/txt_OK"
+                                android:textColor="@color/color_WhiteTextView"
+                                android:textSize="@dimen/textMedium" />
+
+                            <Button
+                                android:id="@+id/btn_Login_SignUp123456789"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/radiusbuttons"
+                                android:text="@string/txt_OK"
+                                android:textColor="@color/color_WhiteTextView"
+                                android:textSize="@dimen/textMedium" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_padding10dp"
+                        android:alpha="0.3"
+                        android:background="@drawable/radiusbackground"
+                        android:padding="@dimen/dimens_padding20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="invisible"
+                            android:weightSum="3">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/imgEmail123"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/email" />
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/textInput_username_signIn123"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toRightOf="@+id/imgEmail123"
+                                    android:scrollbars="vertical"
+                                    android:textColorHint="@color/colorBlue"
+                                    app:errorTextAppearance="@style/HintTextError"
+                                    app:hintEnabled="true"
+                                    app:hintTextAppearance="@style/HintText">
+
+                                    <android.support.v7.widget.AppCompatEditText
+                                        android:id="@+id/edt_user_signIn123"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/textlines"
+                                        android:backgroundTint="@color/colorPrimaryDark"
+                                        android:cursorVisible="true"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:hint="@string/txt_email"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="textEmailAddress"
+                                        android:paddingTop="@dimen/padding_edt_form_signIn"
+                                        android:paddingBottom="@dimen/padding_edt_form_signIn"
+                                        android:scrollbars="vertical"
+                                        android:textColor="@color/color_WhiteTextView"
+                                        android:textColorHint="@color/colorBlue"
+                                        android:textCursorDrawable="@color/colorPrimary"
+                                        android:textSize="@dimen/textMedium" />
+                                </android.support.design.widget.TextInputLayout>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/imgPassword123"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/password123" />
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/textInput_password_signIn123"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@id/imgPasswordfoggot123"
+                                    android:layout_toRightOf="@id/imgPassword123"
+                                    android:scrollbars="vertical"
+                                    android:textColorHint="@color/colorBlue"
+                                    app:errorTextAppearance="@style/HintTextError"
+                                    app:hintEnabled="true"
+                                    app:hintTextAppearance="@style/HintText"
+                                    app:passwordToggleEnabled="true"
+                                    app:passwordToggleTint="@color/color_HideShowPassword">
+
+                                    <android.support.v7.widget.AppCompatEditText
+
+                                        android:id="@+id/edt_password__signIn123"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/textlines"
+                                        android:backgroundTint="@color/colorPrimaryDark"
+                                        android:cursorVisible="true"
+                                        android:drawablePadding="5dp"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:hint="@string/txt_password"
+                                        android:imeOptions="actionDone"
+                                        android:inputType="textPassword"
+                                        android:paddingTop="@dimen/padding_edt_form_signIn"
+                                        android:paddingBottom="@dimen/padding_edt_form_signIn"
+                                        android:scrollbars="vertical"
+                                        android:textColor="@color/color_WhiteTextView"
+                                        android:textColorHint="@color/colorBlue"
+                                        android:textCursorDrawable="@color/colorPrimary"
+                                        android:textSize="@dimen/textMedium" />
+                                </android.support.design.widget.TextInputLayout>
+
+                                <ImageView
+                                    android:id="@+id/imgPasswordfoggot123"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/password1" />
+                            </RelativeLayout>
+
+                            <Button
+                                android:id="@+id/btn_Login_SignUp123"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/radiusbuttons"
+                                android:text="@string/txt_OK"
+                                android:textColor="@color/color_WhiteTextView"
+                                android:textSize="@dimen/textMedium" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_padding10dp"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimens_padding20dp"
+                        android:weightSum="3">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/imgEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/email" />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/textInput_username_signIn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_toRightOf="@+id/imgEmail"
+                                android:scrollbars="vertical"
+                                android:textColorHint="@color/colorBlue"
+                                app:errorTextAppearance="@style/HintTextError"
+                                app:hintEnabled="true"
+                                app:hintTextAppearance="@style/HintText">
+
+                                <android.support.v7.widget.AppCompatEditText
+                                    android:id="@+id/edt_user_signIn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/textlines"
+                                    android:backgroundTint="@color/colorPrimaryDark"
+                                    android:cursorVisible="true"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:hint="@string/txt_email"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textEmailAddress"
+                                    android:paddingTop="@dimen/padding_edt_form_signIn"
+                                    android:paddingBottom="@dimen/padding_edt_form_signIn"
+                                    android:scrollbars="vertical"
+                                    android:textColor="@color/color_WhiteTextView"
+                                    android:textColorHint="@color/colorBlue"
+                                    android:textCursorDrawable="@color/colorPrimary"
+                                    android:textSize="@dimen/textMedium" />
+                            </android.support.design.widget.TextInputLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/imgPassword"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/password123" />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/textInput_password_signIn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_toLeftOf="@id/imgPasswordfoggot"
+                                android:layout_toRightOf="@id/imgPassword"
+                                android:scrollbars="vertical"
+                                android:textColorHint="@color/colorBlue"
+                                app:errorTextAppearance="@style/HintTextError"
+                                app:hintEnabled="true"
+                                app:hintTextAppearance="@style/HintText"
+                                app:passwordToggleEnabled="true"
+                                app:passwordToggleTint="@color/color_HideShowPassword">
+
+                                <android.support.v7.widget.AppCompatEditText
+
+                                    android:id="@+id/edt_password__signIn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/textlines"
+                                    android:backgroundTint="@color/colorPrimaryDark"
+                                    android:cursorVisible="true"
+                                    android:drawablePadding="5dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:hint="@string/txt_password"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="textPassword"
+                                    android:paddingTop="@dimen/padding_edt_form_signIn"
+                                    android:paddingBottom="@dimen/padding_edt_form_signIn"
+                                    android:scrollbars="vertical"
+                                    android:textColor="@color/color_WhiteTextView"
+                                    android:textColorHint="@color/colorBlue"
+                                    android:textCursorDrawable="@color/colorPrimary"
+                                    android:textSize="@dimen/textMedium" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <ImageView
+                                android:id="@+id/imgPasswordfoggot"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/password1" />
+                        </RelativeLayout>
+
+                        <Button
+                            android:id="@+id/btn_Login_SignUp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radiusbuttons"
+                            android:text="@string/txt_OK"
+                            android:textColor="@color/color_WhiteTextView"
+                            android:textSize="@dimen/textMedium" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_signinwith_SignIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_padding10dp"
+                    android:gravity="center"
+                    android:text="@string/txt_signinwith"
+                    android:textColor="@color/color_WhiteTextView"
+                    android:textSize="@dimen/textMedium"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/RecyclerViewSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
         </LinearLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/RecyclerViewSignIn"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1"
-            android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
-    </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

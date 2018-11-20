@@ -54,6 +54,36 @@
     <string name="txt_wanted">WANTED</string>
     <string name="txt_other">OTHER</string>
     <string name="txt_Rs">Rs.</string>
+    <string name="txt_username">Username</string>
+    <string name="txt_Changepassworduser">Change the password</string>
+    <string name="txt_gender">Gender</string>
+    <string name="txt_birthday">Birthday</string>
+    <string name="txt_phone">Phone</string>
+    <string name="txt_emailUser">Email</string>
+    <string name="txt_IDnumber">ID Number</string>
+    <string name="txt_address">Address</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="txt_finish">Finish</string>
+    <string name="txt_male">Male</string>
+    <string name="txt_female">Female</string>
+    <string name="txt_firstname">First Name</string>
+    <string name="txt_lastname">Last Name</string>
+    <string name="txt_Fullname">Fullname</string>
+    <string name="txt_DateRange">Date Range</string>
+    <string name="txt_Issuedby">Issued by</string>
+    <string name="txt_house">House number, street</string>
+    <string name="txt_Wards">Wards</string>
+    <string name="txt_District">District</string>
+    <string name="txt_city">City, province</string>
+    <string name="txt_selfchange">Self-change password</string>
+    <string name="txt_chooserandompassword">Choose random password</string>
+    <string name="txt_old">Old password</string>
+    <string name="txt_newPassword">New password</string>
+    <string name="txt_Enternewpassword">Enter a new password</string>
+    <string name="txt_myQR">My QR code</string>
+    <string name="txt_share">Share</string>
+    <string name="txt_savecode">Save Code</string>
+
     <string name="key_google_api">AIzaSyBPUDCshnXsSwY5O7A2c8aWdhRkMWZbjxE</string>
     <!--search-->
     <string name="show_list">Show list</string>

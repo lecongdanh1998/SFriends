@@ -7,9 +7,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/iconapp1"
@@ -35,7 +34,10 @@
         <activity android:name=".View.HomePage.Sarena.Sarena" />
         <activity android:name=".View.HomePage.Senate.Senate" />
         <activity android:name=".View.HomePage.Sagora.Sagora" />
-        <activity android:name=".View.User.UserActivity" />
+        <activity
+            android:name=".View.User.UserActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".View.User.QR.QRUserActivity"></activity>
         <activity android:name=".View.HomePage.RealEstate.RealEstate" />
 
         <meta-data
