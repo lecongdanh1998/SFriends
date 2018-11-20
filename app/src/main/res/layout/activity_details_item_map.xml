@@ -28,12 +28,6 @@
                 android:background="@drawable/logo_nks"
                 android:fitsSystemWindows="true"
                 app:layout_collapseMode="parallax" />
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"></android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -92,7 +86,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginTop"
+                android:layout_marginTop="@dimen/dimens_margin"
                 android:fontFamily="@font/roboto_italic"
                 android:text="Pizza &amp; buffet chain offering several crust options, plus sandwiches, pastas &amp; more"
                 android:textColor="@color/colorBlack"
@@ -101,7 +95,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginTop"
+                android:layout_marginTop="@dimen/dimens_margin"
                 android:drawableLeft="@drawable/ic_location_on_black_24dp"
                 android:drawablePadding="@dimen/dimens_padding"
                 android:fontFamily="@font/roboto_regular"
@@ -112,7 +106,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginTop"
+                android:layout_marginTop="@dimen/dimens_margin"
                 android:drawableLeft="@drawable/ic_grain_black_24dp"
                 android:drawablePadding="@dimen/dimens_padding"
                 android:fontFamily="@font/roboto_regular"
@@ -123,7 +117,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginTop"
+                android:layout_marginTop="@dimen/dimens_margin"
                 android:drawableLeft="@drawable/ic_call_black_24dp"
                 android:drawablePadding="@dimen/dimens_padding"
                 android:fontFamily="@font/roboto_regular"
@@ -134,7 +128,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginTop"
+                android:layout_marginTop="@dimen/dimens_margin"
                 android:drawableLeft="@drawable/ic_access_time_black_24dp"
                 android:drawablePadding="@dimen/dimens_padding"
                 android:fontFamily="@font/roboto_regular"
@@ -145,10 +139,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginTop"
+                android:layout_marginTop="@dimen/dimens_margin"
                 android:drawableLeft="@drawable/ic_public_black_24dp"
                 android:drawablePadding="@dimen/dimens_padding"
-                android:fontFamily="@font/roboto_medium"
+                android:fontFamily="@font/roboto_regular"
                 android:text="https://nks"
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/textMedium" />
