@@ -54,5 +54,13 @@
     <string name="txt_wanted">WANTED</string>
     <string name="txt_other">OTHER</string>
     <string name="txt_Rs">Rs.</string>
-
+    <string name="key_google_api">AIzaSyBPUDCshnXsSwY5O7A2c8aWdhRkMWZbjxE</string>
+    <!--search-->
+    <string name="show_list">Show list</string>
+    <string name="name_result">Shri Natraj Indian Cuisine</string>
+    <string name="review_result">209</string>
+    <string name="country_result">Indian Restaurant</string>
+    <string name="address_result">41 Bùi Thị Xuân, Phường Phạm Ngũ Lão, Quận 1, TP.Hồ Chí Minh</string>
+    <string name="time_result">Open at 11:00 AM</string>
+    <string name="direction">Directions</string>
 </resources>

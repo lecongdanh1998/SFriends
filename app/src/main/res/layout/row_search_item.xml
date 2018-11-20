@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimens_padding">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/marginTop"
+        android:layout_toLeftOf="@id/img_result">
+
+        <TextView
+            android:id="@+id/txt_name_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/name_result"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textMedium" />
+
+        <RatingBar
+            android:id="@+id/ratingBar_result"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_name_result" />
+
+        <TextView
+            android:id="@+id/txt_review_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_name_result"
+            android:layout_marginLeft="@dimen/marginTop"
+            android:layout_toRightOf="@id/ratingBar_result"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/review_result"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textSmall" />
+
+        <TextView
+            android:id="@+id/txt_type_country_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ratingBar_result"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/country_result"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textSmall" />
+
+        <TextView
+            android:id="@+id/txt_address_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_type_country_result"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+            android:lines="1"
+            android:text="@string/address_result"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textSmall" />
+
+        <TextView
+            android:id="@+id/txt_time_open_address_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_address_result"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/time_result"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textSmall" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_result"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/logo_nks" />
+</RelativeLayout>

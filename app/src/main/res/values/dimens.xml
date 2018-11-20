@@ -14,10 +14,10 @@
     <dimen name="textLager">20sp</dimen>
     <dimen name="padding_item_menu">15dp</dimen>
     <dimen name="margin_FloatingActionButton">16dp</dimen>
-    <dimen name="textSmall">10sp</dimen>
+    <dimen name="textSmall">12sp</dimen>
     <dimen name="textbatdongsan">14sp</dimen>
-    <dimen name="texthomepage">16sp</dimen>
-    <dimen name="textTitToobar">16sp</dimen>
+    <dimen name="texthomepage">18sp</dimen>
+    <dimen name="textTitToobar">22sp</dimen>
     <dimen name="card_padding">1dp</dimen>
     <dimen name="dimes_margin5Dp">5dp</dimen>
     <dimen name="dimes_radiusDp">5dp</dimen>
@@ -31,5 +31,8 @@
     <dimen name="activity_horizontal_margin">40dp</dimen>
     <dimen name="dots_height">30dp</dimen>
     <dimen name="dots_margin_bottom">20dp</dimen>
+    <dimen name="marginTop">8dp</dimen>
+    <dimen name="img_ameities">100dp</dimen>
+    <dimen name="avatar_reviews">40dp</dimen>
 
 </resources>

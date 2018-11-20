@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_item_estimate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:padding="@dimen/dimens_padding">
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager_severalty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/layout_dots_severalty"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/marginTop"
+            android:orientation="horizontal"></LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_favorite_severalty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/dimens_margin"
+            android:src="@drawable/ic_favorite" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_address_severalty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_header"
+        android:layout_marginTop="@dimen/marginTop"
+        android:fontFamily="@font/roboto_medium"
+        android:text="entire apartment"
+        android:textAllCaps="true"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/textMedium" />
+
+    <TextView
+        android:id="@+id/txt_description_severalty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_address_severalty"
+        android:layout_marginTop="@dimen/marginTop"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_medium"
+        android:lineSpacingExtra="@dimen/marginTop"
+        android:lines="2"
+        android:text="entire apartment"
+        android:textAllCaps="true"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/textMedium" />
+
+    <TextView
+        android:id="@+id/txt_price_severalty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_description_severalty"
+        android:layout_marginTop="@dimen/marginTop"
+        android:fontFamily="@font/roboto_regular"
+        android:text="d1,666,666"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/textSmall" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_price_severalty"
+        android:layout_marginTop="@dimen/marginTop">
+
+        <RatingBar
+            android:id="@+id/ratingBar_severalty"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="2"
+            android:stepSize="1" />
+
+        <TextView
+            android:id="@+id/ratingBar_count_severalty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ratingBar_severalty"
+            android:fontFamily="@font/roboto_regular"
+            android:text="85"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textSmall" />
+    </RelativeLayout>
+</RelativeLayout>

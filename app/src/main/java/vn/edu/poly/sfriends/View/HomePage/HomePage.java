@@ -73,13 +73,14 @@ import vn.edu.poly.sfriends.View.HomePage.Cuisine.Cuisine;
 import vn.edu.poly.sfriends.View.HomePage.Education.Education;
 import vn.edu.poly.sfriends.View.HomePage.Entertainment.Entertainment;
 import vn.edu.poly.sfriends.View.HomePage.Other.Other;
+import vn.edu.poly.sfriends.View.HomePage.RealEstate.RealEstate;
 import vn.edu.poly.sfriends.View.HomePage.Sagora.Sagora;
 import vn.edu.poly.sfriends.View.HomePage.Sarena.Sarena;
 import vn.edu.poly.sfriends.View.HomePage.Senate.Senate;
 import vn.edu.poly.sfriends.View.HomePage.Shopping.Shopping;
 import vn.edu.poly.sfriends.View.HomePage.Travel.Travel;
 
-public class HomePage extends Fragment {
+public class HomePage extends Fragment implements View.OnClickListener {
     private static final String TAG = HomePage.class.getSimpleName();
     private View view;
     public ViewPager mViewPager, viewPager,mViewPageQuangCao;
@@ -114,7 +115,7 @@ public class HomePage extends Fragment {
     CardFragmentPagerAdapter pagerAdapter;
     AppBarLayout appBar;
     TextView txt_name_Toobar,toolbar_title;
-    ImageView img_logoMain;
+    ImageView img_logoMain, img_btn_batdongsan_homepage;
     int NumberOne = 0;
     Runnable runnable = new Runnable() {
         public void run() {
@@ -142,7 +143,7 @@ public class HomePage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragmentimg_btn_batdongsan_homepage
 
         view = inflater.inflate(R.layout.fragment_homepage, container, false);
         initControl();
@@ -260,6 +261,7 @@ public class HomePage extends Fragment {
         gridViewSagora = view.findViewById(R.id.gridViewSagora_homepage);
         img_logoMain = getActivity().findViewById(R.id.img_logoMain);
         toolbar_title =  getActivity().findViewById(R.id.txt_name_Toobar);
+        img_btn_batdongsan_homepage = view.findViewById(R.id.img_btn_batdongsan_homepage);
 
 
 
@@ -345,6 +347,7 @@ public class HomePage extends Fragment {
         mAdapterQuangcao = new CustomViewPagerAdapter(getContext(), getTestDataQuangCao());
         viewPager.setAdapter(mAdapter);
         mViewPageQuangCao.setAdapter(mAdapterQuangcao);
+        img_btn_batdongsan_homepage.setOnClickListener(this);
     }
 
     public List<HotDealObject> getTestData() {
@@ -713,4 +716,12 @@ public class HomePage extends Fragment {
 
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.img_btn_batdongsan_homepage:
+                intentView(RealEstate.class);
+                break;
+        }
+    }
 }

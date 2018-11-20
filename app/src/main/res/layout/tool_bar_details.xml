@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:fitsSystemWindows="true"
+        android:padding="@dimen/dimens_padding">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_back_white_24dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/marginTop"
+            android:layout_toLeftOf="@id/menu_favorites"
+            android:background="@drawable/ic_open_in_browser_black_24dp" />
+
+        <ImageView
+            android:id="@+id/menu_favorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="32dp"
+            android:layout_toLeftOf="@+id/menu_list"
+            android:background="@drawable/ic_favorite_white" />
+
+        <ImageView
+            android:id="@+id/menu_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_list_white" />
+    </RelativeLayout>
+</RelativeLayout>

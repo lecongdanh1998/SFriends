@@ -181,7 +181,6 @@ public class Sarena extends BaseActivity implements OnClickListener {
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
         tab_layout.setupWithViewPager(mViewPager);
         img_back_serena = findViewById(R.id.img_back_ToobarSarena);
-
     }
 
 
