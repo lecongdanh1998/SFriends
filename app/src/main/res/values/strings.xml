@@ -84,7 +84,7 @@
     <string name="txt_share">Share</string>
     <string name="txt_savecode">Save Code</string>
 
-    <string name="key_google_api">AIzaSyBPUDCshnXsSwY5O7A2c8aWdhRkMWZbjxE</string>
+    <string name="key_google_api">AIzaSyCqk6yLpY4YgJNxMOAIk4Jc-41uO6Sa6pQ</string>
     <!--search-->
     <string name="show_list">Show list</string>
     <string name="name_result">Shri Natraj Indian Cuisine</string>
@@ -93,4 +93,27 @@
     <string name="address_result">41 Bùi Thị Xuân, Phường Phạm Ngũ Lão, Quận 1, TP.Hồ Chí Minh</string>
     <string name="time_result">Open at 11:00 AM</string>
     <string name="direction">Directions</string>
+    <string name="title_suggest">Mini Loft Design à Proximité du Marais</string>
+    <string name="price">đ2,895,961 per night</string>
+    <string name="from">From: </string>
+    <string name="to">To: </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="estimate_value">GIá trị nhà đất(tỷ VNĐ)</string>
+    <string name="borrow_value">Tỉ lệ vay (%)</string>
+    <string name="duration_borrow">Thời hạn vay (năm)</string>
+    <string name="year">năm</string>
+    <string name="billion">tỷ</string>
+    <string name="inter_rest_rate">Lãi xuất %/năm</string>
+    <string name="txt_radio_1">Thanh toán theo dư nợ giảm dần</string>
+    <string name="txt_radio_2">Thanh toán đều hàng tháng</string>
+    
+    <!--//spinner-->
+    <string-array name="spinner">
+        <item>Mặc định</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
 </resources>

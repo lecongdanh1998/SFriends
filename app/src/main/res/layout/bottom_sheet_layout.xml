@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/bttom_sheet_layout"
+    android:id="@+id/bottom_sheet_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_WhiteView"
@@ -22,6 +22,7 @@
             android:padding="@dimen/dimens_padding">
 
             <TextView
+                android:id="@+id/txt_title_bottom_sheet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_format_list_bulleted_black_24dp"
@@ -33,6 +34,7 @@
         </LinearLayout>
 
         <ListView
+            android:layout_marginTop="@dimen/dimens_margin"
             android:id="@+id/listView_search"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

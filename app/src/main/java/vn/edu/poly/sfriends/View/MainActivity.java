@@ -45,6 +45,7 @@ import vn.edu.poly.sfriends.Component.BaseActivity;
 import vn.edu.poly.sfriends.Model.MenuModel;
 import vn.edu.poly.sfriends.R;
 import vn.edu.poly.sfriends.Server.ApiConnect;
+import vn.edu.poly.sfriends.View.Borrow.Borrow;
 import vn.edu.poly.sfriends.View.HomePage.HomePage;
 import vn.edu.poly.sfriends.View.SignIn.SignIn;
 import vn.edu.poly.sfriends.View.User.UserActivity;
@@ -121,6 +122,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         menuModelArrayList = new ArrayList<>();
         menuModelArrayList.add(new MenuModel(getResources().getString(R.string.txt_homepage)));
         menuModelArrayList.add(new MenuModel(getResources().getString(R.string.txt_Notifications)));
+        menuModelArrayList.add(new MenuModel("Borrow"));
         menuModelArrayList.add(new MenuModel("Post"));
         menuModelArrayList.add(new MenuModel("Gallery"));
         menuModelArrayList.add(new MenuModel("Contact"));
@@ -264,10 +266,10 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 //            case 1:
 //                //Notifications
 //                break;
-//            case 2:
-//                fragment = new Post();
-//                transactionFrangment(fragment, "Post");
-//                break;
+            case 2:
+                fragment = new Borrow();
+                transactionFrangment(fragment, "Borrow");
+                break;
 //            case 3:
 //                fragment = new Gallery();
 //                transactionFrangment(fragment, "My Gallery");

@@ -21,4 +21,7 @@ public class ApiConnect {
         return url + "/storage/app/public/";
     }
     //
+    public static final String URL_GET_NEAR_PLACE( String url) {
+        return url + "/api/nks/map/locations";
+    }
 }

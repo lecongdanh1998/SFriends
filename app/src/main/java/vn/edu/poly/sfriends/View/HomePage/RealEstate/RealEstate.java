@@ -21,7 +21,7 @@ public class RealEstate extends BaseActivity implements View.OnClickListener, Ad
         .OnItemClickListener {
     private View view;
     private ListView listView_severalty;
-    private ArrayList<SeveralModel> listSeveral;
+    private ArrayList<Object> listSeveral;
     private SeveraltyAdapter severaltyAdapter;
     private FloatingActionButton fb_real_estate;
     private ImageView toolBar_back;
@@ -44,6 +44,7 @@ public class RealEstate extends BaseActivity implements View.OnClickListener, Ad
 
     private void initData() {
         listSeveral = new ArrayList<>();
+        listSeveral.add(new String("Explore all 300+ homes"));
         for (int i = 0; i < 5; i++) {
             listSeveral.add(new SeveralModel(String.valueOf(i), "Entire apartment - 1 bed",
                     "champs-ElysEes Golden triangle flat with mezzanine", "đ1,607,619 Per night -" +

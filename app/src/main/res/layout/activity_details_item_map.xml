@@ -9,9 +9,9 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:theme="@style/AppThemebackground"
         android:layout_height="300dp"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppThemebackground">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsingToolbar"
@@ -50,7 +50,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="3">
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/txt_direction_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_directions_black_24dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="Direction"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/textMedium" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -61,7 +73,7 @@
                     android:gravity="center"
                     android:text="Call"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/textLager" />
+                    android:textSize="@dimen/textMedium" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -72,7 +84,7 @@
                     android:gravity="center"
                     android:text="Save"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/textLager" />
+                    android:textSize="@dimen/textMedium" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -83,10 +95,11 @@
                     android:gravity="center"
                     android:text="Share"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/textLager" />
+                    android:textSize="@dimen/textMedium" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/txt_description_details_map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_margin"
@@ -96,6 +109,7 @@
                 android:textSize="@dimen/textMedium" />
 
             <TextView
+                android:id="@+id/txt_address_details_map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_margin"
@@ -107,6 +121,7 @@
                 android:textSize="@dimen/textMedium" />
 
             <TextView
+                android:id="@+id/txt_address2_details_map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_margin"
@@ -118,6 +133,7 @@
                 android:textSize="@dimen/textMedium" />
 
             <TextView
+                android:id="@+id/txt_phone_details_map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_margin"
@@ -129,6 +145,7 @@
                 android:textSize="@dimen/textMedium" />
 
             <TextView
+                android:id="@+id/txt_time_open_details_map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_margin"
@@ -140,6 +157,7 @@
                 android:textSize="@dimen/textMedium" />
 
             <TextView
+                android:id="@+id/txt_website_details_map"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_margin"
@@ -151,6 +169,4 @@
                 android:textSize="@dimen/textMedium" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
-
-    <include layout="@layout/bottom_sheet_details_layout" />
 </android.support.design.widget.CoordinatorLayout>

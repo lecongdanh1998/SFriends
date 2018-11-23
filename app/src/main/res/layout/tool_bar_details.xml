@@ -12,13 +12,27 @@
         android:padding="@dimen/dimens_padding">
 
         <ImageView
+            android:id="@+id/menu_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:background="@drawable/ic_arrow_back_white_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dimens_margin"
+            android:layout_toRightOf="@id/menu_back"
+            android:text="Living area"
+            android:textAllCaps="true"
+            android:textColor="@color/color_WhiteTextView"
+            android:textSize="@dimen/textLager" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/marginTop"
             android:layout_toLeftOf="@id/menu_favorites"
             android:background="@drawable/ic_open_in_browser_black_24dp" />
@@ -27,6 +41,7 @@
             android:id="@+id/menu_favorites"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginRight="32dp"
             android:layout_toLeftOf="@+id/menu_list"
             android:background="@drawable/ic_favorite_white" />
@@ -36,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:background="@drawable/ic_list_white" />
     </RelativeLayout>
 </RelativeLayout>

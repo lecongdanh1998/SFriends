@@ -18,22 +18,38 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import vn.edu.poly.sfriends.View.HomePage.RealEstate.DetailsEstimate;
 import vn.edu.poly.sfriends.Model.SeveralModel;
 import vn.edu.poly.sfriends.Model.SlideImageModel;
 import vn.edu.poly.sfriends.R;
+import vn.edu.poly.sfriends.View.HomePage.RealEstate.DetailsEstimate;
 
 //ratingBar_severalty,img_favorite_severalty,txt_address_severalty,txt_price_severalty,
 // txt_description_severalty
 public class SeveraltyAdapter extends BaseAdapter {
-    List<SeveralModel> severalModels;
+    List<Object> severalModels;
     Context context;
+    private static final int REAL_ESTIMATE = 0;
+    private static final int HEADER = 1;
     private ArrayList<SlideImageModel> listSlide;
     private SlideImageAdapter slideImageAdapter;
 
-    public SeveraltyAdapter(List<SeveralModel> severalModels, Context context) {
+    public SeveraltyAdapter(List<Object> severalModels, Context context) {
         this.severalModels = severalModels;
         this.context = context;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (severalModels.get(position) instanceof SeveralModel) {
+            return REAL_ESTIMATE;
+        } else {
+            return HEADER;
+        }
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 2;
     }
 
     @Override
@@ -55,7 +71,7 @@ public class SeveraltyAdapter extends BaseAdapter {
         RatingBar ratingBar_severalty;
         ImageView img_favorite_severalty;
         TextView txt_address_severalty, txt_price_severalty, txt_description_severalty,
-                ratingBar_count_severalty;
+                ratingBar_count_severalty, txt_title_header;
         ViewPager viewPager_severalty;
         LinearLayout layout_dots_severalty;
         RelativeLayout layout_item_estimate;
@@ -76,60 +92,74 @@ public class SeveraltyAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context
                     .LAYOUT_INFLATER_SERVICE);
             viewHolder = new ViewHolder();
-            convertView = inflater.inflate(R.layout.row_item_real_estate, null);
 
-            viewHolder.ratingBar_severalty = convertView.findViewById(R.id.ratingBar_severalty);
-            viewHolder.txt_address_severalty = convertView.findViewById(R.id.txt_address_severalty);
-            viewHolder.txt_price_severalty = convertView.findViewById(R.id.txt_price_severalty);
-            viewHolder.txt_description_severalty = convertView.findViewById(R.id
-                    .txt_description_severalty);
-            viewHolder.ratingBar_count_severalty = convertView.findViewById(R.id
-                    .ratingBar_count_severalty);
-            viewHolder.viewPager_severalty = convertView.findViewById(R.id.viewPager_severalty);
-            viewHolder.img_favorite_severalty = convertView.findViewById(R.id
-                    .img_favorite_severalty);
-            viewHolder.layout_dots_severalty = convertView.findViewById(R.id.layout_dots_severalty);
-            viewHolder.layout_item_estimate = convertView.findViewById(R.id.layout_item_estimate);
-            addDotIndicator(0, viewHolder);
-            viewHolder.viewPager_severalty.addOnPageChangeListener(new ViewPager
-                    .OnPageChangeListener() {
-                @Override
-                public void onPageScrolled(int i, float v, int i1) {
+            switch (getItemViewType(position)) {
+                case REAL_ESTIMATE:
+                    convertView = inflater.inflate(R.layout.row_item_real_estate, null);
+                    viewHolder.ratingBar_severalty = convertView.findViewById(R.id
+                            .ratingBar_severalty);
+                    viewHolder.txt_address_severalty = convertView.findViewById(R.id
+                            .txt_address_severalty);
+                    viewHolder.txt_price_severalty = convertView.findViewById(R.id
+                            .txt_price_severalty);
+                    viewHolder.txt_description_severalty = convertView.findViewById(R.id
+                            .txt_description_severalty);
+                    viewHolder.ratingBar_count_severalty = convertView.findViewById(R.id
+                            .ratingBar_count_severalty);
+                    viewHolder.viewPager_severalty = convertView.findViewById(R.id
+                            .viewPager_severalty);
+                    viewHolder.img_favorite_severalty = convertView.findViewById(R.id
+                            .img_favorite_severalty);
+                    viewHolder.layout_dots_severalty = convertView.findViewById(R.id
+                            .layout_dots_severalty);
+                    viewHolder.layout_item_estimate = convertView.findViewById(R.id
+                            .layout_item_estimate);
+                    addDotIndicator(0, viewHolder);
+                    viewHolder.viewPager_severalty.addOnPageChangeListener(new ViewPager
+                            .OnPageChangeListener() {
+                        @Override
+                        public void onPageScrolled(int i, float v, int i1) {
 
-                }
+                        }
 
-                @Override
-                public void onPageSelected(int i) {
-                    addDotIndicator(i, viewHolder);
-                }
+                        @Override
+                        public void onPageSelected(int i) {
+                            addDotIndicator(i, viewHolder);
+                        }
 
-                @Override
-                public void onPageScrollStateChanged(int i) {
+                        @Override
+                        public void onPageScrollStateChanged(int i) {
 
-                }
-            });
+                        }
+                    });
 
-            convertView.setTag(viewHolder);
+                    SeveralModel model = (SeveralModel) severalModels.get(position);
+                    viewHolder.ratingBar_severalty.setRating(4);
+                    viewHolder.txt_address_severalty.setText(model.getName());
+                    viewHolder.txt_price_severalty.setText(model.getPrice());
+                    viewHolder.txt_description_severalty.setText(model.getDescription());
+                    viewHolder.ratingBar_count_severalty.setText(model.getRating());
+                    viewHolder.layout_item_estimate.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(context, DetailsEstimate.class);
+                            context.startActivity(intent);
+                        }
+                    });
+                    //slide
+                    slideImageAdapter = new SlideImageAdapter(context, listSlide);
+                    viewHolder.viewPager_severalty.setAdapter(slideImageAdapter);
+                    break;
+                case HEADER:
+                    convertView = inflater.inflate(R.layout.header_real_estate, null);
+                    viewHolder.txt_title_header = convertView.findViewById(R.id.txt_title_header);
+                    viewHolder.txt_title_header.setText((String) severalModels.get(position));
+                    break;
+            }
+//            convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-
-        SeveralModel model = severalModels.get(position);
-        viewHolder.ratingBar_severalty.setRating(4);
-        viewHolder.txt_address_severalty.setText(model.getName());
-        viewHolder.txt_price_severalty.setText(model.getPrice());
-        viewHolder.txt_description_severalty.setText(model.getDescription());
-        viewHolder.ratingBar_count_severalty.setText(model.getRating());
-        viewHolder.layout_item_estimate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, DetailsEstimate.class);
-                context.startActivity(intent);
-            }
-        });
-                //slide
-                slideImageAdapter = new SlideImageAdapter(context, listSlide);
-        viewHolder.viewPager_severalty.setAdapter(slideImageAdapter);
         return convertView;
     }
 

@@ -84,6 +84,8 @@
     <string name="txt_myQR">"Mã QR của tôi "</string>
     <string name="txt_share">Chia sẻ</string>
     <string name="txt_savecode">Lưu mã</string>
-    <string name="key_google_api">AIzaSyBPUDCshnXsSwY5O7A2c8aWdhRkMWZbjxE</string>
+    <string name="key_google_api">AIzaSyCqk6yLpY4YgJNxMOAIk4Jc-41uO6Sa6pQ</string>
     <string name="address_result">41 Bùi Thị Xuân, Phường Phạm Ngũ Lão, Quận 1, TP.Hồ Chí Minh</string>
+    <string name="from">Bắt đầu: </string>
+    <string name="to">Kết thúc: </string>
 </resources>

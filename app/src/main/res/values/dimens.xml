@@ -39,5 +39,9 @@
     <dimen name="marginTop">8dp</dimen>
     <dimen name="img_ameities">100dp</dimen>
     <dimen name="avatar_reviews">40dp</dimen>
-
+    <dimen name="dimens_margin40dp">40dp</dimen>
+    <dimen name="margin_70dp">65dp</dimen>
+    <dimen name="height_image_details_item">400dp</dimen>
+    <dimen name="width_text_from_to">45dp</dimen>
+    <dimen name="height_peek">80dp</dimen>
 </resources>

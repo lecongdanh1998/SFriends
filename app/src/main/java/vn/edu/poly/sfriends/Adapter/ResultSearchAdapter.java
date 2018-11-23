@@ -64,11 +64,11 @@ public class ResultSearchAdapter extends BaseAdapter {
         }
 
         ResultSearchModel model = listResultSearch.get(position);
-        viewHolder.txt_name_result.setText(model.getName());
-        viewHolder.txt_review_result.setText(model.getReviewCount() + " reviews");
-        viewHolder.txt_type_country_result.setText(model.getTypeCountry());
+        viewHolder.txt_name_result.setText(model.getTitle());
+        viewHolder.txt_review_result.setText(model.getView() + " reviews");
+        viewHolder.txt_type_country_result.setText("Vietnamese restaurant");
         viewHolder.txt_address_result.setText(model.getAddress());
-        viewHolder.txt_time_open_address_result.setText(model.getTimeOpen());
+        viewHolder.txt_time_open_address_result.setText("Open at 11:00 AM");
         return convertView;
     }
 }

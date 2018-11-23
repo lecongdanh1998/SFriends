@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimens_padding">
+
+        <RelativeLayout
+            android:id="@+id/layout_image_suggest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@android:color/transparent"
+                app:cardCornerRadius="@dimen/dimes_margin5Dp">
+
+                <ImageView
+                    android:id="@+id/img_suggest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/logo_nks" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:padding="@dimen/dimens_padding"
+                    android:src="@drawable/ic_favorite_border_gray_24dp" />
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_pluss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_image_suggest">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/layout_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/marginTop"
+                android:background="@color/colorPrimaryDark"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="@dimen/dimes_margin5Dp">
+
+                <TextView
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Plus"
+                    android:textColor="@color/color_WhiteTextView"
+                    android:textSize="@dimen/textMedium" />
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/txt_verified_suggest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/marginTop"
+                android:layout_marginTop="@dimen/marginTop"
+                android:layout_toRightOf="@id/layout_plus"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Verified - 1 bed"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/textMedium" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_name_suggest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_pluss"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_bold"
+            android:lines="2"
+            android:text="@string/title_suggest"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textMedium" />
+
+        <TextView
+            android:id="@+id/txt_price_suggest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_name_suggest"
+            android:layout_marginTop="@dimen/marginTop"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/price"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textMedium" />
+
+    </RelativeLayout>
+</RelativeLayout>
