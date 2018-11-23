@@ -108,7 +108,7 @@
     <string name="inter_rest_rate">Lãi xuất %/năm</string>
     <string name="txt_radio_1">Thanh toán theo dư nợ giảm dần</string>
     <string name="txt_radio_2">Thanh toán đều hàng tháng</string>
-    
+
     <!--//spinner-->
     <string-array name="spinner">
         <item>Mặc định</item>
@@ -116,4 +116,25 @@
         <item>11</item>
         <item>12</item>
     </string-array>
+    <string name="facebook_app_id">352185958922539</string>
+    <string name="fb_login_protocol_scheme">fb352185958922539</string>
+    <string name="txt_Thewaytodoit">The way to do it</string>
+    <string name="txt_Camera">Camera</string>
+    <string name="txt_Getphotosfromthelibrary">Get photos from the library</string>
+    <string name="txt_redeempoints">Redeem Points</string>
+    <string name="txt_GOLD">GOLD</string>
+    <string name="txt_Introduce">Introduce</string>
+    <string name="txt_Pointscanbeused">Points can be used</string>
+    <string name="txt_expirydate">expiry date</string>
+    <string name="txt_Historicalpoint">Historical point</string>
+    <string name="txt_Howtoaccumulatebonuspoints">How to accumulate bonus points</string>
+    <string name="txt_Latestoffers">Latest offers</string>
+    <string name="txt_Member">Member</string>
+    <string name="txt_standard">Standard</string>
+    <string name="txt_Silver">Silver</string>
+    <string name="txt_vip">VIP</string>
+    <string name="txt_accumulation">Accumulation</string>
+    <string name="txt_previouspoint">previous point</string>
+    <string name="txt_toopenthestandard">to open the standard</string>
+    <string name="txt_point">point</string>
 </resources>

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -59,5 +60,16 @@ public class AdapterUserIssuedBy extends BaseAdapter {
     }
     class ViewHolder{
         TextView txttitle;
+    }
+
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+        View view = super.getDropDownView(position,convertView,parent);
+        LinearLayout.LayoutParams lastTxtParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        LinearLayout ll  = (LinearLayout) view;
+        TextView txttitle = ll.findViewById(R.id.txt_title_issueby);
+        lastTxtParams.setMargins(32, 16, 32, 16);
+        txttitle.setLayoutParams(lastTxtParams);
+        return  view;
     }
 }

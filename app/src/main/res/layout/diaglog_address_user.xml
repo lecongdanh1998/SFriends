@@ -49,7 +49,6 @@
                 android:fontFamily="@font/roboto_medium"
                 android:hint="@string/txt_house"
                 android:imeOptions="actionDone"
-                android:inputType="number|numberDecimal"
                 android:paddingTop="@dimen/padding_edt_form_signIn"
                 android:paddingBottom="@dimen/padding_edt_form_signIn"
                 android:scrollbars="vertical"
