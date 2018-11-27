@@ -7,6 +7,7 @@
     android:background="@color/color_WhiteTextView"
     android:orientation="vertical"
     android:padding="@dimen/dimens_padding"
+    android:focusableInTouchMode="true"
     tools:context=".View.Borrow.Borrow">
 
     <LinearLayout
@@ -29,15 +30,16 @@
             android:layout_height="wrap_content">
 
             <SeekBar
-                android:min="1"
                 android:id="@+id/seekBar_value_estimate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@id/layout_type_money"
-                android:max="999"
+                android:max="9999"
                 android:maxHeight="10dp"
+                android:min="1"
                 android:padding="@dimen/dimens_padding"
+                android:progress="0"
                 android:progressDrawable="@drawable/custom_seekbar_borrow"
                 android:splitTrack="false"
                 android:thumb="@drawable/ic_adjust_black_24dp" />
@@ -51,14 +53,19 @@
                 android:background="@drawable/custom_border_layout"
                 android:padding="@dimen/marginTop">
 
-                <TextView
+                <EditText
                     android:id="@+id/txt_value_money_estimate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
                     android:layout_toLeftOf="@id/txt_type_money"
+                    android:background="@null"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="0.1"
+                    android:inputType="numberDecimal"
+                    android:selectAllOnFocus="true"
+                    android:text="0.01"
+                    android:imeOptions="actionNext"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/textMedium" />
 
@@ -67,6 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/marginTop"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/billion"
@@ -103,9 +111,10 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@id/layout_borrow_value"
                 android:max="69"
-                android:min="1"
                 android:maxHeight="10dp"
+                android:min="1"
                 android:padding="@dimen/dimens_padding"
+                android:progress="0"
                 android:progressDrawable="@drawable/custom_seekbar_borrow"
                 android:splitTrack="false"
                 android:thumb="@drawable/ic_adjust_black_24dp" />
@@ -119,15 +128,19 @@
                 android:background="@drawable/custom_border_layout"
                 android:padding="@dimen/marginTop">
 
-                <TextView
+                <EditText
                     android:id="@+id/txt_value_borrow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_toLeftOf="@id/txt_borrow"
+                    android:background="@null"
                     android:fontFamily="@font/roboto_medium"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
                     android:text="1"
                     android:textColor="@color/colorBlack"
+                    android:imeOptions="actionNext"
                     android:textSize="@dimen/textMedium" />
 
                 <TextView
@@ -171,9 +184,10 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@id/layout_duration"
                 android:max="99"
-                android:min="1"
                 android:maxHeight="10dp"
+                android:min="1"
                 android:padding="@dimen/dimens_padding"
+                android:progress="0"
                 android:progressDrawable="@drawable/custom_seekbar_borrow"
                 android:splitTrack="false"
                 android:thumb="@drawable/ic_adjust_black_24dp" />
@@ -187,14 +201,18 @@
                 android:background="@drawable/custom_border_layout"
                 android:padding="@dimen/marginTop">
 
-                <TextView
+                <EditText
                     android:id="@+id/txt_value_duration_borrow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_toLeftOf="@id/txt_value_duration"
+                    android:background="@null"
                     android:fontFamily="@font/roboto_medium"
+                    android:inputType="number"
+                    android:selectAllOnFocus="true"
                     android:text="1"
+                    android:imeOptions="actionDone"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/textMedium" />
 

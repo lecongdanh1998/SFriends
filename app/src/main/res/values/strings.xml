@@ -108,7 +108,7 @@
     <string name="inter_rest_rate">Lãi xuất %/năm</string>
     <string name="txt_radio_1">Thanh toán theo dư nợ giảm dần</string>
     <string name="txt_radio_2">Thanh toán đều hàng tháng</string>
-    
+
     <!--//spinner-->
     <string-array name="spinner">
         <item>Mặc định</item>
@@ -116,4 +116,5 @@
         <item>11</item>
         <item>12</item>
     </string-array>
+    <string name="title_activity_calculator_borrow">CalculatorBorrow</string>
 </resources>

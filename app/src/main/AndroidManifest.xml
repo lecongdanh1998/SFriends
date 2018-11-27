@@ -7,8 +7,10 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/iconapp1"
@@ -37,12 +39,13 @@
         <activity
             android:name=".View.User.UserActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".View.User.QR.QRUserActivity"></activity>
+        <activity android:name=".View.User.QR.QRUserActivity" />
         <activity android:name=".View.HomePage.RealEstate.RealEstate" />
-        <activity android:name=".View.HomePage.RealEstate.DetailsListImage"/>
-        <activity android:name=".View.HomePage.RealEstate.SearchMap"/>
-        <activity android:name=".View.HomePage.RealEstate.DetailsEstimate"/>
-        <activity android:name=".View.HomePage.RealEstate.DetailsItemMap"/>
+        <activity android:name=".View.HomePage.RealEstate.DetailsListImage" />
+        <activity android:name=".View.HomePage.RealEstate.SearchMap" />
+        <activity android:name=".View.HomePage.RealEstate.DetailsEstimate" />
+        <activity android:name=".View.HomePage.RealEstate.DetailsItemMap" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -57,7 +60,12 @@
 
         <activity android:name=".View.HomePage.RealEstate.SearchMap" />
         <activity android:name=".View.HomePage.RealEstate.DetailsItemMap" />
-        <activity android:name=".View.HomePage.RealEstate.DetailsEstimate"></activity>
+        <activity android:name=".View.HomePage.RealEstate.DetailsEstimate" />
+        <activity
+            android:name=".View.Borrow.CalculatorBorrow"
+            android:label="@string/title_activity_calculator_borrow"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".View.Borrow.CalculatorBorrow2"></activity>
     </application>
 
 </manifest>

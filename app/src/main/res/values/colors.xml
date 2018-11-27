@@ -9,6 +9,7 @@
     <color name="color_HideShowPassword">#FFFFFF</color>
     <color name="color_WhiteTextView">#FFFFFF</color>
     <color name="colorRed">#ff00</color>
+    <color name="colorRedButton">#ea0000</color>
     <color name="colorBlue">#0077bb</color>
     <color name="colorBlack">#000000</color>
     <color name="colorGray">#abacaf</color>

@@ -44,4 +44,6 @@
     <dimen name="height_image_details_item">400dp</dimen>
     <dimen name="width_text_from_to">45dp</dimen>
     <dimen name="height_peek">80dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="width_item_borrow">120dp</dimen>
 </resources>

@@ -44,6 +44,7 @@ import vn.edu.poly.sfriends.Adapter.MenuAdapter;
 import vn.edu.poly.sfriends.Component.BaseActivity;
 import vn.edu.poly.sfriends.Model.MenuModel;
 import vn.edu.poly.sfriends.R;
+import vn.edu.poly.sfriends.SQLite.DBHelper;
 import vn.edu.poly.sfriends.Server.ApiConnect;
 import vn.edu.poly.sfriends.View.Borrow.Borrow;
 import vn.edu.poly.sfriends.View.HomePage.HomePage;
@@ -337,8 +338,12 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
             }
         };
         requestUser.add(UserRequest);
-
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        DBHelper dbHelper = new DBHelper(this);
+        dbHelper.removeAll();
+    }
 }

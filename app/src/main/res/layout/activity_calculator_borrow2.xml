@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toobar_webview"
+        android:id="@+id/toolBar_calculator_borrow"/>
+
+    <ScrollView
+        android:layout_below="@id/toolBar_calculator_borrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layout_btn_calculator"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:padding="@dimen/dimens_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pie_chart_calculator_borrow"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"></com.github.mikephil.charting.charts.PieChart>
+
+            <LinearLayout
+                android:id="@+id/layout_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_margin"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Cần trả trước:"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/textLager" />
+                    </TableRow>
+
+                    <TableRow android:layout_marginTop="@dimen/dimens_margin">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Gốc cần trả:"
+                            android:textColor="@color/dot_dark_screen2"
+                            android:textSize="@dimen/textLager" />
+                    </TableRow>
+
+                    <TableRow android:layout_marginTop="@dimen/dimens_margin">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Lãi cần trả:"
+                            android:textColor="@color/color_Purple"
+                            android:textSize="@dimen/textLager" />
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right">
+
+                        <TextView
+                            android:id="@+id/txt_interest_calculator"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="right"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/textLager" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/dimens_margin"
+                        android:gravity="right">
+
+                        <TextView
+                            android:id="@+id/txt_principal_calculator"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="right"
+                            android:text=""
+                            android:textColor="@color/dot_dark_screen2"
+                            android:textSize="@dimen/textLager" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/dimens_margin"
+                        android:gravity="right">
+
+                        <TextView
+                            android:id="@+id/txt_interest_pay_calculator"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="right"
+                            android:text=""
+                            android:textColor="@color/color_Purple"
+                            android:textSize="@dimen/textLager" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <!--line-->
+            <View
+                android:id="@+id/line_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimens_margin40dp"
+                android:background="@color/colorGray" />
+
+            <LinearLayout
+                android:id="@+id/layout_money_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dimens_margin40dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Thanh toán tháng đầu:"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/textLager" />
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TableRow android:gravity="right">
+
+                        <TextView
+                            android:id="@+id/txt_first_month_money_calculator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bolditalic"
+                            android:text=""
+                            android:textColor="@color/colorBlack"
+                            android:textSize="30sp" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <!--line 2-->
+            <View
+                android:id="@+id/line_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimens_margin40dp"
+                android:background="@color/colorGray" />
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/layout_btn_calculator"
+        app:cardBackgroundColor="@color/colorRedButton">
+
+        <Button
+            android:id="@+id/btn_show_excel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/ic_file_download_black_24dp"
+            android:drawablePadding="@dimen/marginTop"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Tải bảng thanh toán từng tháng"
+            android:textAllCaps="false"
+            android:textColor="@color/color_WhiteTextView" />
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
