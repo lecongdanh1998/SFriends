@@ -51,12 +51,13 @@
         <activity
             android:name=".View.User.UserActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".View.User.QR.QRUserActivity"></activity>
+        <activity android:name=".View.User.QR.QRUserActivity" />
         <activity android:name=".View.HomePage.RealEstate.RealEstate" />
-        <activity android:name=".View.HomePage.RealEstate.DetailsListImage"/>
-        <activity android:name=".View.HomePage.RealEstate.SearchMap"/>
-        <activity android:name=".View.HomePage.RealEstate.DetailsEstimate"/>
-        <activity android:name=".View.HomePage.RealEstate.DetailsItemMap"/>
+        <activity android:name=".View.HomePage.RealEstate.DetailsListImage" />
+        <activity android:name=".View.HomePage.RealEstate.SearchMap" />
+        <activity android:name=".View.HomePage.RealEstate.DetailsEstimate" />
+        <activity android:name=".View.HomePage.RealEstate.DetailsItemMap" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -79,7 +80,12 @@
             android:exported="true"
             tools:ignore="WrongManifestParent" />
 
-        <activity android:name=".View.User.Medal.MemberActivity"></activity>
+        <activity android:name=".View.User.Medal.MemberActivity" />
+        <activity android:name=".View.User.Medal.HistoryPoint.HistoryPointActivity" />
+        <activity android:name=".View.User.Medal.Gift_store.GiftStoreActivity"
+            android:windowSoftInputMode="adjustPan|adjustResize"
+            android:configChanges="keyboardHidden|screenSize"
+            ></activity>
     </application>
 
 </manifest>

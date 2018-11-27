@@ -137,4 +137,9 @@
     <string name="txt_previouspoint">previous point</string>
     <string name="txt_toopenthestandard">to open the standard</string>
     <string name="txt_point">point</string>
+    <string name="txt_Level">Level</string>
+    <string name="txt_Rewardhistory">Reward history</string>
+    <string name="txt_Pointsreceived">Points received</string>
+    <string name="txt_Pointsused">Points used</string>
+    <string name="txt_Giftstore">Gift store</string>
 </resources>

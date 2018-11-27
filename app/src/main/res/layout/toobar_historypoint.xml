@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimens_heigth_toobar"
+    android:background="@color/color_Toobar">
+
+    <ImageView
+        android:id="@+id/img_back_historypoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_arrow_back_white_24dp" />
+
+    <TextView
+        android:id="@+id/txt_title_historypoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/img_back_historypoint"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:lines="1"
+        android:text="@string/txt_Historicalpoint"
+        android:textColor="@color/color_WhiteTextView"
+        android:textSize="@dimen/textTitToobar" />
+</RelativeLayout>

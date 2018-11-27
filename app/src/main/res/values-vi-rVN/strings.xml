@@ -109,4 +109,9 @@
     <string name="txt_accumulation">Tích lũy</string>
     <string name="txt_toopenthestandard">để mở hạng tiêu chuẩn</string>
     <string name="txt_point">điểm</string>
+    <string name="txt_Level">Tiến độ hạng mức</string>
+    <string name="txt_Rewardhistory">Lịch sử điểm thưởng</string>
+    <string name="txt_Pointsreceived">Số điểm đã nhận</string>
+    <string name="txt_Pointsused">Số điểm đã dùng</string>
+    <string name="txt_Giftstore">Cửa hàng quà tặng</string>
 </resources>

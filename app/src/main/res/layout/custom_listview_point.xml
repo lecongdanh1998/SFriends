@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="@dimen/dimens_padding"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:lines="1"
+        android:ellipsize="end"
+        android:id="@+id/title_point"
+        android:layout_toLeftOf="@+id/point"
+        android:layout_width="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="@dimen/textsize_medium"
+        />
+    <TextView
+        android:layout_toLeftOf="@+id/point"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_below="@+id/title_point"
+        android:layout_marginTop="5dp"
+        android:id="@+id/time_point"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_thin"
+        android:textSize="@dimen/textsize_medium"
+        />
+    <TextView
+        android:layout_centerVertical="true"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:id="@+id/point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:textStyle="bold"
+        android:textSize="@dimen/textsize_medium"
+        />
+</RelativeLayout>

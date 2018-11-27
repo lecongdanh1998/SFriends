@@ -233,7 +233,6 @@
                         android:textColor="@color/colorBlue"
                         android:textSize="@dimen/textsize_large" />
                     <View
-                        android:layout_marginBottom="8dp"
                         android:alpha="0.5"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -260,8 +259,65 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
-
+                <TextView
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_regular"
+                    android:lines="1"
+                    android:text="@string/txt_Latestoffers"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/textsize_large"
+                    />
+                <GridView
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:id="@+id/gridView_Member"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/RLTlayout"
+                    android:layout_marginTop="@dimen/dimes_margin10Dp"
+                    android:horizontalSpacing="0dp"
+                    android:nestedScrollingEnabled="true"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="0dp"></GridView>
+                <TextView
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/txt_viewall_member"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_regular"
+                    android:lines="1"
+                    android:text="@string/txt_all"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="@dimen/textsize_large" />
+                <android.support.design.widget.TabLayout
+                    android:elevation="5dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="#FFFFFF"
+                    app:tabIndicatorColor="#0077bb"
+                    app:tabSelectedTextColor="#0077bb" />
+                <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
             </LinearLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
