@@ -46,9 +46,9 @@ public class CustomViewPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        View view = layoutInflater.inflate(R.layout.hot_deal_layout, container, false);
+        View view = layoutInflater.inflate(R.layout.hot_deal_layout_gift_store, container, false);
         HotDealObject mHotDealObject = hotDealList.get(position);
-        ImageView favoriteIcon = (ImageView)view.findViewById(R.id.hot_deal_food_image);
+        ImageView favoriteIcon = (ImageView)view.findViewById(R.id.hot_deal_food_image_gift);
         Picasso.get()
                 .load(mHotDealObject.getImages())
                 .into(favoriteIcon);

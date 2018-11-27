@@ -8,11 +8,11 @@
     android:focusableInTouchMode="true"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <TextView
-        android:id="@+id/txt_male_user"
+        android:id="@+id/txt_camera_user"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txt_male"
+        android:text="@string/txt_Camera"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
@@ -20,11 +20,11 @@
         android:textSize="@dimen/textsize_medium"
         />
     <TextView
-        android:id="@+id/txt_female_user"
+        android:id="@+id/txt_Getphotos_user"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txt_female"
+        android:text="@string/txt_Getphotosfromthelibrary"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"

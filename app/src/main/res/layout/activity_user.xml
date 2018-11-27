@@ -48,10 +48,10 @@
                     android:layout_gravity="center"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/background"
                     app:layout_collapseMode="parallax" />
 
                 <TextView
+                    android:id="@+id/txt_title_user"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -60,7 +60,6 @@
                     android:fontFamily="@font/roboto_regular"
                     android:gravity="center"
                     android:lines="1"
-                    android:text="Danh lee"
                     android:textColor="#000"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -126,14 +125,12 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
-            android:id="@+id/LNL_username_user"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/dimens_margin"
             android:orientation="vertical">
-
             <LinearLayout
-                android:id="@+id/LNL_username"
+                android:id="@+id/LNL_username_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimens_margin"
@@ -152,7 +149,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="Danh lee"
+                    android:textSize="@dimen/textsize_medium"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#bcbab8" />
+            <LinearLayout
+                android:id="@+id/LNL_fullname_User"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/txt_Fullname"
+                    android:textColor="#000"
+                    android:textSize="@dimen/textsize_large" />
+
+                <TextView
+                    android:id="@+id/txt_fullname_User"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Lê Công Danh"
                     android:textSize="@dimen/textsize_medium"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -302,7 +327,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="teo@gmail.com"
                     android:textSize="@dimen/textsize_medium"
                     android:textStyle="bold" />
             </LinearLayout>

@@ -503,7 +503,6 @@
                                 app:passwordToggleTint="@color/color_HideShowPassword">
 
                                 <android.support.v7.widget.AppCompatEditText
-
                                     android:id="@+id/edt_password__signIn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"

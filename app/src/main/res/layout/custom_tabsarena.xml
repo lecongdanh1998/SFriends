@@ -7,6 +7,6 @@
     android:textAllCaps="false"
     android:textSize="14sp"
     android:fontFamily="@font/roboto_regular"
-    android:lines="1"
+    android:lines="2"
     android:ellipsize="end"
      />

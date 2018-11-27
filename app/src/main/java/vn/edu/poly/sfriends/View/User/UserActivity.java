@@ -1,19 +1,29 @@
 package vn.edu.poly.sfriends.View.User;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Build;
+import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -31,30 +41,59 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Random;
 
 import vn.edu.poly.sfriends.Adapter.AdapterUserIssuedBy;
 import vn.edu.poly.sfriends.Component.BaseActivity;
 import vn.edu.poly.sfriends.Model.UserIssuedByContructor;
 import vn.edu.poly.sfriends.R;
+import vn.edu.poly.sfriends.Server.ApiConnect;
 import vn.edu.poly.sfriends.View.MainActivity;
+import vn.edu.poly.sfriends.View.User.Medal.MemberActivity;
 import vn.edu.poly.sfriends.View.User.QR.QRUserActivity;
 
 public class UserActivity extends BaseActivity implements View.OnClickListener {
     Toolbar toolbar;
-    LinearLayout LNL_username, LNL_gender_user, LNL_chagepassword_user, LNL_birthday_user,
+    LinearLayout LNL_fullname, LNL_gender_user, LNL_chagepassword_user, LNL_birthday_user,
             LNL_phone_user, LNL_email_user, LNL_IDnumber_user, LNL_address_user;
     CollapsingToolbarLayout collapsingToolbar;
     int numberWard = 0;
     int numberDistrict = 0;
     int numberCity = 0;
     int MAX_CHAR = 8;
-    ImageView img_QRuser;
+    ImageView img_QRuser, img_back_postdetail,img_avatar_user,img_logo_user,img_medal_postdetail;
+    String URL_USER = "";
+    private ProgressDialog progressDialog;
+    String emailUser;
+    String idUser, nameUser, avatarUser;
+    TextView txt_title_user, txt_username_User, txt_email_User;
+    private int PIC_CROP = 3;
+    private Uri picUri;
+    private int CAMERA_REQUEST = 1;
+    private int CAMERA_REQUEST_MAX = 1999;
+    private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
+    private static final int PERMISSION_REQUEST_CAMERA = 0;
+    int NumberCamera = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +104,8 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void initOnClick() {
-        LNL_username.setOnClickListener(this);
+        img_logo_user.setOnClickListener(this);
+        LNL_fullname.setOnClickListener(this);
         LNL_gender_user.setOnClickListener(this);
         LNL_chagepassword_user.setOnClickListener(this);
         LNL_birthday_user.setOnClickListener(this);
@@ -74,26 +114,92 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
         LNL_IDnumber_user.setOnClickListener(this);
         LNL_address_user.setOnClickListener(this);
         img_QRuser.setOnClickListener(this);
+        img_back_postdetail.setOnClickListener(this);
+        img_medal_postdetail.setOnClickListener(this);
+        img_avatar_user.setOnClickListener(this);
     }
 
     private void initControl() {
+        img_medal_postdetail = findViewById(R.id.img_medal_postdetail);
+        img_logo_user = findViewById(R.id.img_logo_user);
+        img_avatar_user = findViewById(R.id.img_avatar_user);
+        img_back_postdetail = findViewById(R.id.img_back_postdetail);
         img_QRuser = findViewById(R.id.img_qr_user);
-        LNL_username = findViewById(R.id.LNL_username);
+        LNL_fullname = findViewById(R.id.LNL_fullname_User);
         LNL_gender_user = findViewById(R.id.LNL_gender_user);
         LNL_chagepassword_user = findViewById(R.id.LNL_chagepassword_user);
         LNL_birthday_user = findViewById(R.id.LNL_birthday_user);
         LNL_phone_user = findViewById(R.id.LNL_phone_user);
+        txt_username_User = findViewById(R.id.txt_username_User);
+        txt_email_User = findViewById(R.id.txt_email_User);
         LNL_email_user = findViewById(R.id.LNL_email_user);
         LNL_IDnumber_user = findViewById(R.id.LNL_IDnumber_user);
         LNL_address_user = findViewById(R.id.LNL_address_user);
         toolbar = findViewById(R.id.toolbar);
         collapsingToolbar = findViewById(R.id.collapsingToolbar);
+        txt_title_user = findViewById(R.id.txt_title_user);
+
     }
 
     private void initData() {
+        progressDialog = new ProgressDialog(this);
+        URL_USER = ApiConnect.URL_GET_USER_INFOR(HTTP);
+        emailUser = dataLoginUser.getString("useremail", "");
+        token = dataLoginUser.getString("usertoken", "");
+        UserInfo(URL_USER);
+    }
 
+    private void UserInfo(String url) {
+        setContentDialog("Loading", "Please wait...");
+        progressDialog.show();
+        RequestQueue requestUser = Volley.newRequestQueue(this);
+        StringRequest UserRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    progressDialog.dismiss();
+                    JSONObject jsonObject1 = new JSONObject(response);
+                    JSONObject jsonObject = jsonObject1.getJSONObject("data");
+                    idUser = jsonObject.getString("id");
+                    nameUser = jsonObject.getString("name");
+                    emailUser = jsonObject.getString("email");
+                    avatarUser = jsonObject.getString("avatar");
+                    Picasso.get()
+                            .load(avatarUser)
+                            .into(img_avatar_user);
+                    txt_title_user.setText(nameUser);
+                    txt_username_User.setText(nameUser);
+                    txt_email_User.setText(emailUser);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
+                Log.d("ERROR_USER", error + "");
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("email", emailUser);
+                return params;
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<String, String>();
+                headers.put("Authorization", token);
+                return headers;
+            }
+        };
+        requestUser.add(UserRequest);
 
     }
+
 
     private void initDiagLogFullName() {
         final Dialog dialog = new Dialog(this);
@@ -114,6 +220,48 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.diaglog_email_user);
         dialog.setTitle(getResources().getString(R.string.txt_emailUser));
+        final EditText edt_user_email = dialog.findViewById(R.id.edt_user_email);
+        final Button btn_finish_user = dialog.findViewById(R.id.btn_finish_user);
+        edt_user_email.setText(emailUser);
+        if(edt_user_email.getText().toString().equals("")){
+            btn_finish_user.setEnabled(false);
+            btn_finish_user.setAlpha((float) 0.3);
+        }else {
+            if(edt_user_email.getText().toString().equals(emailUser)){
+                btn_finish_user.setEnabled(false);
+                btn_finish_user.setAlpha((float) 0.3);
+            }else {
+                btn_finish_user.setEnabled(true);
+                btn_finish_user.setAlpha(1);
+            }
+        }
+        edt_user_email.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    if(edt_user_email.getText().toString().equals("")){
+                        btn_finish_user.setEnabled(false);
+                        btn_finish_user.setAlpha((float) 0.3);
+                    }else {
+                        if(edt_user_email.getText().toString().equals(emailUser)){
+                            btn_finish_user.setEnabled(false);
+                            btn_finish_user.setAlpha((float) 0.3);
+                        }else {
+                            btn_finish_user.setEnabled(true);
+                            btn_finish_user.setAlpha(1);
+                        }
+                    }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         dialog.show();
     }
 
@@ -561,7 +709,6 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.diaglog_address_user);
         dialog.setTitle(getResources().getString(R.string.txt_address));
-
         final EditText edt_user_numberhouse = dialog.findViewById(R.id.edt_user_numberhouse);
         final TextView txt_address = dialog.findViewById(R.id.txt_address);
         Spinner spin_Wards = (Spinner) dialog.findViewById(R.id.pioedittxt5_Wards);
@@ -585,6 +732,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
         arrayAdapter_city = new AdapterUserIssuedBy(this, arrayList_city);
         arrayAdapter_city.notifyDataSetChanged();
         spin_Wards.setAdapter(arrayAdapter_Wards);
+        spin_Wards.setDropDownVerticalOffset(100);
         spin_Wards.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -624,7 +772,8 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
                 txt_address.setText(edt_user_numberhouse.getText().toString().trim()
                         + ", " + arrayList_Wards.get(numberWard).getTitle()
                         + ", " + arrayList_District.get(numberDistrict).getTitle()
-                        + ", " + arrayList_city.get(position).getTitle());;
+                        + ", " + arrayList_city.get(position).getTitle());
+                ;
             }
 
             @Override
@@ -643,7 +792,8 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
                 txt_address.setText(edt_user_numberhouse.getText().toString().trim()
                         + ", " + arrayList_Wards.get(numberWard).getTitle()
                         + ", " + arrayList_District.get(numberDistrict).getTitle()
-                        + ", " + arrayList_city.get(numberCity).getTitle());;
+                        + ", " + arrayList_city.get(numberCity).getTitle());
+                ;
             }
 
             @Override
@@ -654,7 +804,8 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
         txt_address.setText(edt_user_numberhouse.getText().toString().trim()
                 + ", " + arrayList_Wards.get(numberWard).getTitle()
                 + ", " + arrayList_District.get(numberDistrict).getTitle()
-                + ", " + arrayList_city.get(numberCity).getTitle());;
+                + ", " + arrayList_city.get(numberCity).getTitle());
+        ;
         dialog.show();
     }
 
@@ -747,11 +898,45 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
         super.onBackPressed();
     }
 
+
+
+    private void setContentDialog(String title, String messager) {
+        progressDialog.setTitle(title);
+        progressDialog.setMessage(messager);
+    }
+
+
+    private void alertDiaLogUploadImages() {
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_uploadimages_gallery);
+        dialog.setTitle(getResources().getString(R.string.txt_Thewaytodoit));
+        final TextView txt_camera_Upload = (TextView) dialog.findViewById(R.id.txt_camera_user);
+        final TextView txt_gallery_Upload = (TextView) dialog.findViewById(R.id.txt_Getphotos_user);
+        txt_camera_Upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+                SDK_Camera();
+            }
+        });
+        txt_gallery_Upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+                NumberCamera = 2;
+                galleryUpload();
+            }
+        });
+        dialog.show();
+
+
+    }
+
     @SuppressLint("NewApi")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.LNL_username:
+            case R.id.LNL_fullname_User:
                 initDiagLogFullName();
                 break;
             case R.id.LNL_gender_user:
@@ -778,6 +963,158 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
             case R.id.img_qr_user:
                 intentView(QRUserActivity.class);
                 break;
+            case R.id.img_back_postdetail:
+                onBackPressed();
+                break;
+            case R.id.img_avatar_user:
+                alertDiaLogUploadImages();
+                break;
+            case R.id.img_logo_user:
+                NumberCamera = 1;
+                galleryUpload();
+                break;
+            case R.id.img_medal_postdetail:
+                intentView(MemberActivity.class);
+                break;
+
         }
     }
+
+    private void SDK_Camera() {
+        if (Build.VERSION.SDK_INT > 21) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                    == PackageManager.PERMISSION_GRANTED) {
+                // Permission is already available, start camera preview
+                Toast.makeText(this, "Starting preview.", Toast.LENGTH_SHORT).show();
+//                            Snackbar.make(view_Account,
+//                                    "Camera permission is available (API: " + Build.VERSION.SDK_INT + "). Starting preview.",
+//                                    Snackbar.LENGTH_SHORT).show();
+
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(this.getPackageManager()) != null) {
+
+                    startActivityForResult(takePictureIntent, CAMERA_REQUEST_MAX);
+                }
+            } else {
+                // Permission is missing and must be requested.
+                requestCameraPermission();
+            }
+        } else {
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(takePictureIntent, CAMERA_REQUEST);
+
+        }
+    }
+    private void requestCameraPermission() {
+        // Permission has not been granted and must be requested.
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                Manifest.permission.CAMERA)) {
+            // Provide an additional rationale to the user if the permission was not granted
+            // and the user would benefit from additional context for the use of the permission.
+//            // Display a SnackBar with a button to request the missing permission.
+            Toast.makeText(this, "Camera access is required to display the camera preview.", Toast.LENGTH_SHORT).show();
+
+        } else {
+            Toast.makeText(this, "Permission is not available. Requesting camera permission.", Toast.LENGTH_SHORT).show();
+            // Request the permission. The result will be received in onRequestPermissionResult().
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA},
+                    PERMISSION_REQUEST_CAMERA);
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 2 && resultCode == this.RESULT_OK && data != null) {
+            if(NumberCamera == 1){
+                Bundle extras = data.getExtras();
+                Bitmap image = extras.getParcelable("data");
+                img_logo_user.setImageBitmap(image);
+                final String image1 = decodeImage(image);
+            }else if(NumberCamera == 2){
+                Bundle extras = data.getExtras();
+                Bitmap image = extras.getParcelable("data");
+                img_avatar_user.setImageBitmap(image);
+                final String image1 = decodeImage(image);
+            }
+
+
+        }
+        if (resultCode == this.RESULT_OK) {
+            if (requestCode == CAMERA_REQUEST) {
+                // get the Uri for the captured image
+                picUri = data.getData();
+                performCrop();
+            } else if (requestCode == CAMERA_REQUEST_MAX) {
+                Bundle extras = data.getExtras();
+                Bitmap imageBitmap = (Bitmap) extras.get("data");
+                img_avatar_user.setImageBitmap(imageBitmap);
+                Bitmap bitmap = ((BitmapDrawable) img_avatar_user.getDrawable()).getBitmap();
+                final String image = decodeImage(bitmap);
+
+            } else if (requestCode == PIC_CROP) {
+                // get the returned data
+                Bundle extras = data.getExtras();
+                // get the cropped bitmap
+                Bitmap thePic = extras.getParcelable("data");
+                img_avatar_user.setImageBitmap(thePic);
+            }
+        }
+    }
+
+    public String decodeImage(Bitmap bitmap) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 80, outputStream);
+        byte[] byteImage = outputStream.toByteArray();
+        String encodeImage = Base64.encodeToString(byteImage, Base64.NO_WRAP);
+        return encodeImage;
+    }
+
+    private void performCrop() {
+        // take care of exceptions
+        try {
+            // call the standard crop action intent (the user device may not
+            // support it)
+            Intent cropIntent = new Intent("com.android.camera.action.CROP");
+            // indicate image type and Uri
+            cropIntent.setDataAndType(picUri, "image/*");
+            // set crop properties
+            cropIntent.putExtra("crop", "true");
+            // indicate aspect of desired crop
+            cropIntent.putExtra("aspectX", 200);
+            cropIntent.putExtra("aspectY", 200);
+            // indicate output X and Y
+            cropIntent.putExtra("outputX", 200);
+            cropIntent.putExtra("outputY", 200);
+            // retrieve data on return
+            cropIntent.putExtra("return-data", true);
+            // start the activity - we handle returning in onActivityResult
+            startActivityForResult(cropIntent, PIC_CROP);
+        }
+        // respond to users whose devices do not support the crop action
+        catch (ActivityNotFoundException anfe) {
+
+        }
+    }
+
+    private void galleryUpload() {
+        Intent imageDownload = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        if(NumberCamera == 1){
+            imageDownload.putExtra("crop", "true");
+            imageDownload.putExtra("aspectX", 0);
+            imageDownload.putExtra("aspectY", 0);
+            imageDownload.putExtra("outputX", 200);
+            imageDownload.putExtra("outputY", 150);
+        }else if(NumberCamera == 2){
+            imageDownload.putExtra("crop", "true");
+            imageDownload.putExtra("aspectX", 200);
+            imageDownload.putExtra("aspectY", 200);
+            imageDownload.putExtra("outputX", 200);
+            imageDownload.putExtra("outputY", 200);
+        }
+        imageDownload.putExtra("return-data", true);
+        startActivityForResult(imageDownload, 2);
+    }
+
+
 }
