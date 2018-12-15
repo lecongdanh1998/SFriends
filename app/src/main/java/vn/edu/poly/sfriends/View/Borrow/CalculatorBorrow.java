@@ -130,25 +130,24 @@ public class CalculatorBorrow extends BaseActivity implements View.OnClickListen
 
         }
         //interest
-        value_estimate = value_estimate * billion;
         interest_calculator = (value_estimate - (value_estimate * (value_borrow / 100)));
-        str_interest_calculator = format.format(interest_calculator);
+        str_interest_calculator = format.format(interest_calculator * billion);
         txt_interest_calculator.setText(str_interest_calculator.replace(".", ","));
 //        principal_calculator
         principal_calculator = value_estimate - interest_calculator;
-        str_principal_calculator = format.format(principal_calculator);
+        str_principal_calculator = format.format(principal_calculator * billion);
         txt_principal_calculator.setText(str_principal_calculator.replace(".", ","));
 //        interest_pay_calculator
         interest_pay_calculator = principal_calculator * (inter_rest/ (100 *12)) * duration_borrow *
                 12;
-        str_interest_pay_calculator = format.format(interest_pay_calculator);
+        str_interest_pay_calculator = format.format(interest_pay_calculator * billion);
         txt_interest_pay_calculator.setText(str_interest_pay_calculator.replace(".", ","));
         //calculator data
         value_estimate = principal_calculator;
         gocThanhToan = value_estimate / (duration_borrow * 12);
         laiThanhToan = value_estimate * (inter_rest / (100 * 12));
         tongGocLai = gocThanhToan + laiThanhToan;
-        str_first_month_money_calculator = format.format(tongGocLai);
+        str_first_month_money_calculator = format.format(tongGocLai * billion);
         txt_first_month_money_calculator.setText(str_first_month_money_calculator);
         //dummy data
         dbHelper.insertData(value_estimate, 0.0, 0.0, 0.0);
@@ -213,13 +212,13 @@ public class CalculatorBorrow extends BaseActivity implements View.OnClickListen
             if (cursor.moveToFirst()){
                 do {
                     double so_goc_con_lai = cursor.getDouble(cursor.getColumnIndex(DBHelper
-                            .SO_GOC_CON_LAI));
+                            .SO_GOC_CON_LAI)) * billion;
                     double goc = cursor.getDouble(cursor.getColumnIndex(DBHelper
-                            .GOC));
+                            .GOC)) * billion;
                     double lai = cursor.getDouble(cursor.getColumnIndex(DBHelper
-                            .LAI));
+                            .LAI))* billion;
                     double tong_goc_lai = cursor.getDouble(cursor.getColumnIndex(DBHelper
-                            .TONG_GOC_LAI));
+                            .TONG_GOC_LAI)) * billion;
 
 //                    so_goc_con_lai = 1d*(int)(so_goc_con_lai*100)/100;
 //                    goc = 1d*(int)(goc*100)/100;

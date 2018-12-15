@@ -135,7 +135,7 @@ public class CalculatorBorrow2 extends BaseActivity implements View.OnClickListe
         pieChart.setTransparentCircleRadius(70f);
         pieChart.getLegend().setEnabled(false);
         DecimalFormat format = new DecimalFormat("#.## tỷ");
-        double price = (interest_calculator + principal_calculator + interest_pay_calculator) / billion;
+        double price = (interest_calculator + principal_calculator + interest_pay_calculator);
         String str_center = format.format(price);
         pieChart.setCenterText(str_center.replace(".", ","));
         pieChart.setCenterTextColor(Color.BLACK);
@@ -147,21 +147,20 @@ public class CalculatorBorrow2 extends BaseActivity implements View.OnClickListe
     private void calculatorBorrow() {
 
         int kiThanhToan = 0;
-        value_estimate = value_estimate * billion;
         //interest
         interest_calculator = (value_estimate - (value_estimate * (value_borrow / 100)));
-        str_interest_calculator = format.format(interest_calculator);
+        str_interest_calculator = format.format(interest_calculator * billion);
         txt_interest_calculator.setText(str_interest_calculator.replace(".", ","));
 //        principal_calculator
         principal_calculator = value_estimate - interest_calculator;
-        str_principal_calculator = format.format(principal_calculator);
+        str_principal_calculator = format.format(principal_calculator * billion);
         txt_principal_calculator.setText(str_principal_calculator.replace(".", ","));
 //        new data calculator
         value_estimate = principal_calculator;
         gocThanhToan = value_estimate / (duration_borrow * 12);
 //        insert data to dtb
         dbHelper.insertData(value_estimate, 0.0, 0.0, 0.0);
-        for (int i = 1; i > 0; i++) {
+        for (int i = 0; i < ((int) duration_borrow * 12); i++) {
             kiThanhToan++;
             duNoDauKi = value_estimate - gocThanhToan;
             laiThanhToan = value_estimate * (inter_rest / 100 / 12);
@@ -170,8 +169,9 @@ public class CalculatorBorrow2 extends BaseActivity implements View.OnClickListe
             tienTraHangThang = gocThanhToan + laiThanhToan;
             tongLaiThanhToan = tongLaiThanhToan + laiThanhToan;
             tongGocLai = tongGocLai + tienTraHangThang;
+            Log.d("DUNOGIA", "" + "\nTong lai" + format.format(tongLaiThanhToan * billion));
             dbHelper.insertData(duNoDauKi, gocThanhToan, laiThanhToan, tienTraHangThang);
-            String s = format.format(duNoDauKi);
+            String s = format.format(duNoDauKi * billion);
             if (kiThanhToan == 1){
                 thanhToanThangDau = tienTraHangThang;
             }
@@ -181,10 +181,10 @@ public class CalculatorBorrow2 extends BaseActivity implements View.OnClickListe
         }
         //        interest_pay_calculator
         interest_pay_calculator = tongLaiThanhToan;
-        str_interest_pay_calculator = format.format(interest_pay_calculator);
+        str_interest_pay_calculator = format.format(interest_pay_calculator * billion);
         txt_interest_pay_calculator.setText(str_interest_pay_calculator.replace(".", ","));
         // interest
-        str_first_month_money_calculator = format.format(thanhToanThangDau);
+        str_first_month_money_calculator = format.format(thanhToanThangDau * billion);
         txt_first_month_money_calculator.setText(str_first_month_money_calculator.replace(".", "," +
                 ""));
         tongGocThanhToan = gocThanhToan * duration_borrow * 12;
@@ -192,9 +192,9 @@ public class CalculatorBorrow2 extends BaseActivity implements View.OnClickListe
 
     private void initDataPieChart() {
         yValues = new ArrayList<>();
-        yValues.add(new PieEntry((float) interest_calculator, "Pay first"));
-        yValues.add(new PieEntry((float) principal_calculator, "Principal"));
-        yValues.add(new PieEntry((float) interest_pay_calculator, "Interest"));
+        yValues.add(new PieEntry((float) interest_calculator * billion, "Pay first"));
+        yValues.add(new PieEntry((float) principal_calculator * billion, "Principal"));
+        yValues.add(new PieEntry((float) interest_pay_calculator * billion, "Interest"));
 
         dataSet = new PieDataSet(yValues, "");
         dataSet.setSliceSpace(3f);
@@ -235,13 +235,13 @@ public class CalculatorBorrow2 extends BaseActivity implements View.OnClickListe
             if (cursor.moveToFirst()){
                 do {
                     double so_goc_con_lai = cursor.getDouble(cursor.getColumnIndex(DBHelper
-                            .SO_GOC_CON_LAI));
+                            .SO_GOC_CON_LAI)) * billion;
                     double goc = cursor.getDouble(cursor.getColumnIndex(DBHelper
-                            .GOC));
+                            .GOC)) * billion;
                     double lai = cursor.getDouble(cursor.getColumnIndex(DBHelper
-                            .LAI));
+                            .LAI)) * billion;
                     double tong_goc_lai = cursor.getDouble(cursor.getColumnIndex(DBHelper
-                            .TONG_GOC_LAI));
+                            .TONG_GOC_LAI)) * billion;
 
 //                    so_goc_con_lai = 1d*(int)(so_goc_con_lai*100)/100;
 //                    goc = 1d*(int)(goc*100)/100;
